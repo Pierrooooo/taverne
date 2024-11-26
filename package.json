@@ -1,0 +1,29 @@
+{
+  "name": "nico-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@barba/core": "^2.10.0",
+    "@react-google-maps/api": "^2.20.3",
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.6",
+    "next": "14.2.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "swiper": "^11.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
+    "typescript": "^5"
+  }
+}

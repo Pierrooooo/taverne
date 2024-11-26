@@ -1,0 +1,20 @@
+.title {
+    font-size: 48px;
+    line-height: 68px;
+    letter-spacing: 0;
+}
+.title_XL {
+    font-size: 108px;
+    line-height: 120px;
+    letter-spacing: 0;
+}
+.title_XXL {
+    font-size: 180px;
+    line-height: 120px;
+    letter-spacing: 0;
+}
+.para {
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0;
+}
