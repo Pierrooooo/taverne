@@ -1,0 +1,66 @@
+.edito {
+    position: relative;
+    margin-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.image_div {
+    flex: 1 1 50%;
+    aspect-ratio: 1;
+}
+
+.image_div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    flex: 1 1 50%;
+}
+.text,
+.title {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 500px;
+}
+.title {
+    display: none;
+}
+
+.mob_title {
+    display: block;
+    position: absolute;
+    top: -40px;
+    left: 20px;
+    /* transform: translate3d(0, 36px, 0); */
+}
+
+
+@media (min-width: 768px) {
+
+    .edito {
+        display: flex;
+        margin: auto;
+        flex-direction: row;
+        justify-content: center;
+        max-width: 1700px;
+    }
+    .edito.invert {
+        flex-direction: row-reverse;
+    }
+
+    .content {
+        padding: 24px;
+    }
+
+    .mob_title {
+        display: none;
+    }
+
+    .title {
+        display: block;
+        margin-bottom: 16px;
+    }
+}

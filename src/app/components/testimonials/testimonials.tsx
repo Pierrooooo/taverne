@@ -65,12 +65,12 @@ export default function Testimonials(): JSX.Element {
                             <p className={`${styles.testimonial_text} para`}>
                                 “ {testimonial.text} ”
                             </p>
-                            <div className={styles.testimonial_infos}>
+                            <div className={`${styles.testimonial_infos} para_S`}>
                                 <Image
                                     src={testimonial.imageUrl}
                                     alt={testimonial.name}
-                                    width={50}
-                                    height={50}
+                                    width={80}
+                                    height={80}
                                     className={styles.testimonial_image}
                                 />
                                 <div>
@@ -85,9 +85,14 @@ export default function Testimonials(): JSX.Element {
                     <div className={`${styles.swiperButtonPrevCustom} swiper-button-prev-custom`}>
                         <Image src="/assets/icons/swiper-prev.svg" alt="Previous" width={24} height={24} />
                     </div>
-                    <div className={styles.slide_id_text}>
+                    <p className={styles.slide_id_text}>
+                        <span>
                         {parseFloat(currentTestimonialId) > 9 ? currentTestimonialId : '0' + currentTestimonialId}
-                    </div>
+                        </span>
+                        <span> / </span>
+                        <span>
+                        {testimonials.length > 9 ? testimonials.length : '0' + testimonials.length}</span>
+                    </p>
                     <div className={`${styles.swiperButtonNextCustom} swiper-button-next-custom`}>
                         <Image src="/assets/icons/swiper-next.svg" alt="Next" width={24} height={24} />
                     </div>

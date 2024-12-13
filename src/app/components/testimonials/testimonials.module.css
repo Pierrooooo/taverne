@@ -1,8 +1,8 @@
 .testimonials {
     position: relative;
-    padding: 32px;
-    background-color: var(--white);
+    padding: 20px;
     max-width: 1076px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -14,11 +14,10 @@
 
 .testimonial_text {
     color: var(--black);
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 }
 
 .testimonial_infos {
-    margin-left: 100px;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -30,7 +29,6 @@
 
 .testimonial_name {
     font-weight: bold;
-    font-size: 16px;
 }
 
 .testimonial_profession {
@@ -56,12 +54,13 @@
     font-size: 1rem;
 } */
 
-/* .slide_id_text {
-    position: absolute;
+.slide_id_text {
+    /* position: absolute;
     width: fit-content;
     bottom: 0;
     left: 50px;
-} */
+    font-size: 20px; */
+}
 
 /* .swiper-button-prev {
     right: 50px !important;
@@ -95,6 +94,25 @@
 .testimonial_swiper_navigation {
     position: absolute;
     display: flex;
+    align-items: center;
+    gap: 12px;
     bottom: 12px;
-    right: 12px;
+    right: 0;
+}
+
+
+
+@media (min-width: 768px) {
+    .testimonials {
+        padding: 32px;
+    }
+    .testimonial_infos {
+        margin-left: 100px;
+    }
+    .testimonial_text {
+        margin-bottom: 48px;
+    }
+    .testimonial_swiper_navigation {
+        right: 100px;
+    }
 }

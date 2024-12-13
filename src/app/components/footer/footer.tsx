@@ -33,10 +33,10 @@ export default function Footer(): JSX.Element {
                             <Link href="#">Home</Link>
                         </li>
                         <li>
-                            <Link href="#">Menu</Link>
+                            <Link href="/menu">Menu</Link>
                         </li>
                         <li>
-                            <Link href="#">Gallery</Link>
+                            <Link href="/gallery">Gallery</Link>
                         </li>
                     </ul>
                 </div>
@@ -57,12 +57,12 @@ export default function Footer(): JSX.Element {
                 </div>
 
             </div>
-            <p className={styles.test_text}>La Ptite Tavern</p>
+            {/* <p className={styles.test_text}>La p&apos;tite Taverne</p> */}
             <div className={styles.footer_image}>
-                {/* <img
+                <img
                     src="/assets/images/footer_title.png"
                     alt="Restaurant's Title : La P'tite Taverne"
-                /> */}
+                />
             </div>
             <div className={styles.footer_bottom}>
                 <p className={styles.footer_copyright}>Copyright © 2024</p>
