@@ -96,7 +96,7 @@ a {
 }
 
 section + section,
-section + footer {
+main + footer {
   margin-top: 80px;
 }
 
@@ -110,7 +110,7 @@ main {
 
 @media (min-width: 768px) {
   section + section,
-  section + footer {
+  main + footer {
     margin-top: 240px;
   }
 }
