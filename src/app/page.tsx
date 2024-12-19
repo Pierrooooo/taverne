@@ -1,9 +1,7 @@
 'use client';
 
 import Hero from './components/hero/hero';
-import NavBar from './components/navBar/navBar';
 import Quote from './components/quote/quote';
-import Footer from './components/footer/footer';
 import GridLayout from './oui';
 import Testimonials from './components/testimonials/testimonials';
 import Map from './components/map/map';
@@ -13,7 +11,6 @@ import Edito from './components/edito/edito';
 export default function Home() {
   return (
     <main>
-      <NavBar />
       <Hero
         title="La P'tite Taverne"
         imageSrc="/assets/images/hero.jpg"
@@ -25,11 +22,9 @@ export default function Home() {
         invert={true}
       />
       <VisualStory />
-      {/* Mettre en valeur RESTAURANT LA FRETTE */}
       {/* <Map /> */}
       <Testimonials />
       <Quote />
-      <Footer />
       <GridLayout />
     </main>
   );

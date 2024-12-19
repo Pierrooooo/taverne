@@ -10,8 +10,8 @@ interface HeroProps {
 }
 
 export default function Hero({ title, imageSrc }: HeroProps): JSX.Element {
-  const [windowWidth, setWindowWidth] = useState<number>(0);
-  const [windowHeight, setWindowHeight] = useState<number>(0);
+  const [windowWidth, setWindowWidth] = useState<number>(1920);
+  const [windowHeight, setWindowHeight] = useState<number>(1080);
 
   useEffect(() => {
     const handleResize = (): void => {
@@ -22,9 +22,12 @@ export default function Hero({ title, imageSrc }: HeroProps): JSX.Element {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
 
-    return () => window.removeEventListener('resize', handleResize);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+
+      return () => window.removeEventListener('resize', handleResize);
+    }
   }, []);
 
   return (

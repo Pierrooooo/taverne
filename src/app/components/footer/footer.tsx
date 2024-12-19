@@ -3,26 +3,9 @@
 import Image from "next/image";
 import Link from 'next/link';
 import styles from './footer.module.css';
-import { useState, useEffect } from 'react';
 import CopyToClipboard from "@/app/utils/copyToClipboard";
 
 export default function Footer(): JSX.Element {
-    const [windowWidth, setWindowWidth] = useState<number>(0);
-    const [windowHeight, setWindowHeight] = useState<number>(0);
-
-    useEffect(() => {
-      const handleResize = (): void => {
-        if (typeof window !== 'undefined') {
-          setWindowWidth(window.innerWidth * 0.8);
-          setWindowHeight(window.innerHeight * 0.4);
-        }
-      };
-
-      handleResize();
-      window.addEventListener('resize', handleResize);
-  
-      return () => window.removeEventListener('resize', handleResize);
-    }, []);
 
     return (
         <footer className={styles.footer}>
@@ -45,7 +28,7 @@ export default function Footer(): JSX.Element {
                     <p className="title">Contact</p>
                     <ul>
                         <li>
-                            <p>+33 0101010101</p>
+                            <CopyToClipboard text="+33 0101010101" />
                         </li>
                         <li>
                             <CopyToClipboard text="lerestautdehervé@gmail.com"/>
@@ -60,7 +43,9 @@ export default function Footer(): JSX.Element {
             </div>
             {/* <p className={styles.test_text}>La p&apos;tite Taverne</p> */}
             <div className={styles.footer_image}>
-                <img
+                <Image
+                    height={300}
+                    width={1500}
                     src="/assets/images/footer_title.png"
                     alt="Restaurant's Title : La P'tite Taverne"
                 />

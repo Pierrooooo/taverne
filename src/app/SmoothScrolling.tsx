@@ -15,18 +15,20 @@ function SmoothScrolling({ children }: SmoothScrollingProps) {
     let lastScrollY = 0;
 
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      // const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+      if (typeof window !== "undefined") {
+        const currentScrollY = window.scrollY;
+        // const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
 
-      if (currentScrollY > lastScrollY) {
-        document.body.classList.add('scroll_down');
-        document.body.classList.remove('scroll_up');
-      } else if (currentScrollY < lastScrollY) {
-        document.body.classList.add('scroll_up');
-        document.body.classList.remove('scroll_down');
+        if (currentScrollY > lastScrollY) {
+          document.body.classList.add('scroll_down');
+          document.body.classList.remove('scroll_up');
+        } else if (currentScrollY < lastScrollY) {
+          document.body.classList.add('scroll_up');
+          document.body.classList.remove('scroll_down');
+        }
+
+        lastScrollY = currentScrollY;
       }
-
-      lastScrollY = currentScrollY;
     };
 
     if (lenis) {
