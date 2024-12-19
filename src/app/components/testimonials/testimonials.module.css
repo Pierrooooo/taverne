@@ -10,6 +10,7 @@
 .testimonial {
     display: flex;
     flex-direction: column;
+    cursor: grab;
 }
 
 .testimonial_text {
@@ -105,6 +106,7 @@
 @media (min-width: 768px) {
     .testimonials {
         padding: 32px;
+        padding-bottom: 0;
     }
     .testimonial_infos {
         margin-left: 100px;

@@ -47,7 +47,7 @@ export default function Testimonials(): JSX.Element {
     };
 
     return (
-        <section className={styles.testimonials}>
+        <section data-nav="gallery" className={styles.testimonials}>
             <Swiper
                 modules={[Navigation, A11y]}
                 spaceBetween={30}

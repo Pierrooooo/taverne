@@ -20,7 +20,7 @@ export default function Edito({ title, imageSrc, para, invert }: EditoProps): JS
         <Image src={imageSrc} alt={title} width={900} height={900} />
       </div>
       <div className={styles.content}>
-        <h2 className={`${styles.title} title_L`}>{title}</h2>
+        <h2 className={`${styles.title} title_XL`}>{title}</h2>
         <p className={`${styles.text} para_s`}>{para}</p>
       </div>
     </section>

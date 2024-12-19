@@ -1,7 +1,7 @@
 .footer {
     position: relative;
-    padding: 0 calc((100% - var(--max-width)) / 2);
-    min-height: 70dvh;
+    height: fit-content;
+    padding: 0 20px;
     width: 100%;
     background-color: var(--brown);
     color: var(--beige);
@@ -58,10 +58,10 @@
 
 @media (max-width: 768px) {
 
-    .footer {
+    /* .footer {
         height: fit-content;
         padding: 0 20px;
-    }
+    } */
 
     .footer_infos {
         margin-top: 70px;
@@ -78,6 +78,19 @@
     }
 }
 
+@media (min-width: 768px) {
+    .footer {
+        padding: 0 calc((100% - var(--max-width)) / 2);
+    }
+
+    .footer_info ul {
+        margin-top: 24px;
+    }
+
+    .footer_image img {
+        padding: 0 20px;
+    }
+}
 
 @media (min-width: 1700px) {
     .footer_bottom {

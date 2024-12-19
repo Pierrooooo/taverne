@@ -16,14 +16,34 @@
 }
 
 .hero_title {
+    padding: 0 20px;
     max-width: 660px;
     text-align: center;
     color: var(--beige);
 }
 
+.scroll_text {
+    position: absolute;
+    display: none;
+    bottom: 48px;
+    color: var(--beige);
+    transform: rotate(90deg);
+}
+
+.scroll_text span {
+
+}
+
+@keyframes scroll_text {
+    
+}
 
 @media (min-width: 768px) {
     .hero {
         height: 70dvh;
     } 
+
+    .scroll_text {
+        display: block;
+    }
 }

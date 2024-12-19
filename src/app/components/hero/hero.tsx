@@ -28,7 +28,7 @@ export default function Hero({ title, imageSrc }: HeroProps): JSX.Element {
   }, []);
 
   return (
-    <div className={styles.hero} id="hero">
+    <section className={styles.hero} id="hero">
       <Image
         className={styles.hero_bgimage}
         src={imageSrc}
@@ -38,6 +38,14 @@ export default function Hero({ title, imageSrc }: HeroProps): JSX.Element {
       />
       <div className="overlay"></div>
       <h1 className={`${styles.hero_title} title_XL`}>{title}</h1>
-    </div>
+      <p className={styles.scroll_text}>
+        <span>S</span>
+        <span>C</span>
+        <span>R</span>
+        <span>O</span>
+        <span>L</span>
+        <span>L</span>
+      </p>
+    </section>
   );
 }

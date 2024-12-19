@@ -22,7 +22,7 @@
   --bezier-3: cubic-bezier(.42,.43,1,.56);
 
   --black: rgb(14, 3, 1);
-  --white: rgb(248, 244, 236);
+  --white: hsl(40, 46%, 98%);
   --beige: rgb(255, 239, 206);
   --brown: rgb(145, 30, 33);
 
@@ -73,6 +73,7 @@ body {
 
 body {
   color: var(--brown);
+  background-color: var(--white);
 }
 
 a {
@@ -94,8 +95,8 @@ a {
   pointer-events: none;
 }
 
-section,
-footer {
+section + section,
+section + footer {
   margin-top: 80px;
 }
 
@@ -108,9 +109,8 @@ main {
 }
 
 @media (min-width: 768px) {
-  #hero + section:not(.section_menu, .section_gallery),
   section + section,
-  section:not(.section_menu, .section__gallery) + footer {
+  section + footer {
     margin-top: 240px;
   }
 }

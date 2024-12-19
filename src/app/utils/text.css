@@ -29,6 +29,14 @@
     letter-spacing: 0;
 }
 
+.title, .title_L, .title_XL, .title_XXL {
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.para, .para_S {
+    font-family: 'Nunito_Sans', sans-serif;
+}
+
 @media (min-width: 768px) {
     .title {
         font-size: 48px;

@@ -12,11 +12,40 @@ function SmoothScrolling({ children }: SmoothScrollingProps) {
   const lenis = useLenis();
 
   useEffect(() => {
+    let lastScrollY = 0;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      // const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+
+      if (currentScrollY > lastScrollY) {
+        document.body.classList.add('scroll_down');
+        document.body.classList.remove('scroll_up');
+      } else if (currentScrollY < lastScrollY) {
+        document.body.classList.add('scroll_up');
+        document.body.classList.remove('scroll_down');
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
+    if (lenis) {
+      lenis.on('scroll', handleScroll);
+    }
+
+    return () => {
+      if (lenis) {
+        lenis.off('scroll', handleScroll);
+      }
+    };
+  }, [lenis]);
+
+  useEffect(() => {
     const handleAnchorClick = (e: Event) => {
       e.preventDefault();
       const target = e.currentTarget as HTMLAnchorElement;
       const href = target.getAttribute('href') || '';
-      
+
       if (href.startsWith('#') && lenis) {
         lenis.scrollTo(href);
       }
