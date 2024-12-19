@@ -53,7 +53,7 @@ export default function VisualStory(): JSX.Element {
                     <p className={`${styles.texts_para} para_s`}>
                         Situé à La Frette, notre restaurant vous invite à un voyage culinaire dans un cadre chaleureux et authentique. 
                         Entre esprit de taverne moderne et ambiance cosy, nous avons pensé chaque détail pour que vous vous sentiez comme chez vous, 
-                        tout en profitant d’un service soigné et de plats savoureux.
+                        tout en profitant de plats savoureux.
                     </p>
                 </div>
             </div>
