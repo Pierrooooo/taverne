@@ -8,10 +8,15 @@
     overflow: hidden;
 }
 
-.hero_bgimage {
+.image_container {
     z-index: -2;
     position: absolute;
     inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero_bgimage {
     object-fit: cover;
 }
 

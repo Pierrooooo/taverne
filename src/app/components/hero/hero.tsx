@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import styles from './hero.module.css';
+import { slideDown } from '@/app/animations/animationsgsap';
 
 interface HeroProps {
   title: string;
@@ -21,6 +22,8 @@ export default function Hero({ title, imageSrc }: HeroProps): JSX.Element {
       }
     };
 
+    slideDown("#hero .anim_img_bg", "#hero .anim_img_bg", "center center", "bottom top", 70);
+
     handleResize();
 
     if (typeof window !== 'undefined') {
@@ -32,13 +35,15 @@ export default function Hero({ title, imageSrc }: HeroProps): JSX.Element {
 
   return (
     <section className={styles.hero} id="hero">
-      <Image
-        className={styles.hero_bgimage}
-        src={imageSrc}
-        width={windowWidth}
-        height={windowHeight}
-        alt="Hero background"
-      />
+      <div className={styles.image_container}>
+        <Image
+          className={`$styles.hero_bgimage} anim_img_bg`}
+          src={imageSrc}
+          width={windowWidth}
+          height={windowHeight}
+          alt="Hero background"
+        />
+      </div>
       <div className="overlay"></div>
       <h1 className={`${styles.hero_title} title_XL`}>{title}</h1>
       <p className={styles.scroll_text}>

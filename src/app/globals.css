@@ -108,9 +108,9 @@ main {
   min-height: 100vh;
 }
 
-/* .pswp--custom-bg {
-  --pswp-bg: var(--beige);
-} */
+.anim_img_bg {
+  scale: 1.15;
+}
 
 @media (min-width: 768px) {
   section + section,
