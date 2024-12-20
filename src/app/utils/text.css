@@ -1,20 +1,70 @@
 .title {
-    font-size: 48px;
-    line-height: 68px;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0;
+}
+.title_L {
+    font-size: 40px;
+    line-height: 40px;
     letter-spacing: 0;
 }
 .title_XL {
-    font-size: 108px;
-    line-height: 120px;
+    font-size: 80px;
+    line-height: 92px;
     letter-spacing: 0;
 }
 .title_XXL {
-    font-size: 180px;
-    line-height: 120px;
+    font-size: 120px;
+    line-height: 140px;
     letter-spacing: 0;
 }
 .para {
-    font-size: 36px;
-    line-height: 48px;
+    font-size: 16px;
+    line-height: 24px;
     letter-spacing: 0;
+}
+.para_S {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+
+.title, .title_L, .title_XL, .title_XXL {
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.para, .para_S {
+    font-family: 'Nunito_Sans', sans-serif;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 48px;
+        line-height: 48px;
+        letter-spacing: 0;
+    }
+    .title_L {
+        font-size: 80px;
+        line-height: 80px;
+        letter-spacing: 0;
+    }
+    .title_XL {
+        font-size: 108px;
+        line-height: 120px;
+    }
+    .title_XXL {
+        font-size: 180px;
+        line-height: 120px;
+        letter-spacing: 0;
+    }
+    .para {
+        font-size: 36px;
+        line-height: 48px;
+        letter-spacing: 0;
+    }
+    .para_S {
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: 0;
+    }
 }

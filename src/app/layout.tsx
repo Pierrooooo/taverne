@@ -2,8 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./utils/text.css";
 import "./custom-swiper.css";
-import SmoothScrolling from "./SmoothScrolling";
+import dynamic from 'next/dynamic';
+// import SmoothScrolling from "./SmoothScrolling";
 import { textFont } from "./utils/fonts";
+import Footer from "./components/footer/footer";
+import NavBar from "./components/navBar/navBar";
+
+const SmoothScrolling = dynamic(() => import("./SmoothScrolling"));
 
 export const metadata: Metadata = {
   title: "Home",
@@ -18,7 +23,11 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={textFont.className}>
-        <SmoothScrolling>{children}</SmoothScrolling>
+        <SmoothScrolling>
+          <NavBar />
+          {children}
+          <Footer />
+        </SmoothScrolling>
       </body>
     </html>
   );

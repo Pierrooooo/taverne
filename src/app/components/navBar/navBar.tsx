@@ -1,27 +1,103 @@
 'use client'
 
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./nav.module.css";
 import Link from "next/link";
+import CopyToClipboard from "@/app/utils/copyToClipboard";
 
 export default function NavBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTestimonialsActive, setIsTestimonialsActive] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  useEffect(() => {
+    const testimonialsSection = document.querySelector('.testimonials');
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsTestimonialsActive(true);
+        } else {
+          setIsTestimonialsActive(false);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (testimonialsSection) {
+      observer.observe(testimonialsSection);
+    }
+
+    return () => {
+      if (testimonialsSection) {
+        observer.unobserve(testimonialsSection);
+      }
+    };
+  }, []);
+
   return (
-    <nav className={styles.navbar}>
+    <nav
+      className={`${styles.navbar} ${
+        isTestimonialsActive ? styles.active : ""
+      }`}
+    >
+      <Link href={'/'}>
         <Image 
-            src={'/assets/icons/logo.webp'}
-            alt=""
-            width={50}
-            height={50}
+          src={'/assets/icons/logo.png'}
+          alt=""
+          height={0}
+          width={0}
+          className={styles.image}
+          sizes="100vw"
         />
-        <ul className={styles.links}>
+      </Link>
+      <ul className={styles.links}>
+        <li>
+          <Link href={'/gallery'}>Gallerie</Link>
+        </li>
+        <li>
+          <Link href={'/menu'}>Menu</Link>
+        </li>
+      </ul>
+      <div className={styles.phone}>
+        <CopyToClipboard type="phone" text="09 79 39 11 01"/>
+      </div>
+
+      <button
+        className={`${styles.burger} ${isMenuOpen ? styles.active : ''}`}
+        onClick={toggleMenu}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div className={styles.burgerMenu}>
+        <div className={styles.transis}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul>
           <li>
-            <Link href={'/gallery'}>Gallery</Link>
+            <Link href={'/'} onClick={toggleMenu}>Accueil</Link>
           </li>
           <li>
-            <Link href={'/menu'}>Menu</Link>
+            <Link href={'/gallery'} onClick={toggleMenu}>Gallerie</Link>
+          </li>
+          <li>
+            <Link href={'/menu'} onClick={toggleMenu}>Menu</Link>
           </li>
         </ul>
-        
+        <div className={styles.burger_infos}>
+          <CopyToClipboard type="phone" text="01010101101"/>
+          <a target='_blank' href="https://www.google.fr/maps/place/La+P'tite+Taverne/@48.9683424,2.1600307,14.36z/data=!4m10!1m2!2m1!1sla+pt'ite+tavern!3m6!1s0x47e661a0d6113b35:0x597b80010c1c8d95!8m2!3d48.9704529!4d2.1806255!15sChBsYSBwJ3RpdGUgdGF2ZXJuWhIiEGxhIHAgdGl0ZSB0YXZlcm6SARFmcmVuY2hfcmVzdGF1cmFudOABAA!16s%2Fg%2F11y9r4ljlz?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">21 Quai de Seine, 95530 La Frette-sur-Seine</a>
+        </div>
+      </div>
     </nav>
   );
 }

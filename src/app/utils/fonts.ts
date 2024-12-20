@@ -4,7 +4,7 @@ export const titleFont = Bricolage_Grotesque({
   subsets: ['latin'],
   display: 'swap'
 });
-  
+
 export const textFont = Nunito_Sans({
   subsets: ['latin'],
   display: 'swap'

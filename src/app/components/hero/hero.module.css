@@ -1,0 +1,49 @@
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(80dvh + 80px);
+    overflow: hidden;
+}
+
+.hero_bgimage {
+    z-index: -2;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+}
+
+.hero_title {
+    padding: 0 20px;
+    max-width: 660px;
+    text-align: center;
+    color: var(--beige);
+}
+
+.scroll_text {
+    position: absolute;
+    display: none;
+    bottom: 48px;
+    color: var(--beige);
+    transform: rotate(90deg);
+}
+
+.scroll_text span {
+
+}
+
+@keyframes scroll_text {
+    
+}
+
+@media (min-width: 768px) {
+    .hero {
+        height: calc(70dvh + 70px);
+    } 
+
+    .scroll_text {
+        display: block;
+    }
+}
