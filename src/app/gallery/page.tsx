@@ -1,28 +1,32 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import GLightbox from 'glightbox';
-import 'glightbox/dist/css/glightbox.css';
 import Hero from '../components/hero/hero';
 import styles from './page.module.css';
 import Image from 'next/image';
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import 'photoswipe/style.css';
 
 export default function Gallery() {
   const [activeTab, setActiveTab] = useState('Tab1');
 
+  const handleTabClick = (tab: string) => {
+    setActiveTab(tab);
+  };
+
   useEffect(() => {
-    const lightbox = GLightbox({
-      selector: '[data-glightbox="gallery"]',
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#gallery',
+      children: 'a',
+      showHideAnimationType: 'zoom',
+      pswpModule: () => import('photoswipe'),
     });
+    lightbox.init();
 
     return () => {
       lightbox.destroy();
     };
   }, []);
-
-  const handleTabClick = (tab: string) => {
-    setActiveTab(tab);
-  };
 
   const tab1Images = [
     '/assets/images/homelette.jpeg',
@@ -67,16 +71,22 @@ export default function Gallery() {
           )}
         </div>
 
-        <div className={styles.imageGrid}>
+        <div id="gallery" className={styles.imageGrid}>
           {activeTab === 'Tab1' &&
             tab1Images.map((image, index) => (
               <a
                 key={index}
                 href={image}
-                data-glightbox="gallery"
                 className={styles.imageContainer}
               >
-                <Image height={400} width={400} src={image} alt={`Tab1 Image ${index + 1}`} className={styles.image} />
+                <Image
+                  height={0}
+                  width={0}
+                  src={image}
+                  alt={`Tab1 Image ${index + 1}`}
+                  className={styles.image}
+                  sizes="100vw"
+                />
               </a>
             ))}
 
@@ -85,10 +95,18 @@ export default function Gallery() {
               <a
                 key={index}
                 href={image}
-                data-glightbox="gallery"
+                data-pswp-width="auto"
+                data-pswp-height="100vh"
                 className={styles.imageContainer}
               >
-                <Image height={400} width={400}  src={image} alt={`Tab2 Image ${index + 1}`} className={styles.image} />
+                <Image
+                  height={0}
+                  width={0}
+                  src={image}
+                  alt={`Tab2 Image ${index + 1}`}
+                  className={styles.image}
+                  sizes="100vw"
+                />
               </a>
             ))}
         </div>

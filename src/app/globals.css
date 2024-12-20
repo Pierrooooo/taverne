@@ -108,6 +108,10 @@ main {
   min-height: 100vh;
 }
 
+/* .pswp--custom-bg {
+  --pswp-bg: var(--beige);
+} */
+
 @media (min-width: 768px) {
   section + section,
   main + footer {

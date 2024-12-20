@@ -16,15 +16,14 @@
     height: auto;
     transition: transform 0.3s ease;
 }
-  
-.menuItem:hover .menuImage {
-    transform: scale(1.05);
-}
 
 
 @media (min-width: 1024px) {
     .menuItem {
         max-width: 400px;
+    }
+    .menuItem:hover .menuImage {
+        transform: scale(1.05);
     }
 }
 

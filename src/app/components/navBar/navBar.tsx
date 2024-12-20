@@ -25,7 +25,7 @@ export default function NavBar() {
           setIsTestimonialsActive(false);
         }
       },
-      { threshold: 0.5 } // Trigger when 50% of the section is visible
+      { threshold: 0.5 }
     );
 
     if (testimonialsSection) {
@@ -49,21 +49,22 @@ export default function NavBar() {
         <Image 
           src={'/assets/icons/logo.png'}
           alt=""
-          width={50}
-          height={50}
+          height={0}
+          width={0}
+          className={styles.image}
+          sizes="100vw"
         />
       </Link>
       <ul className={styles.links}>
         <li>
-          <Link href={'/gallery'}>Gallery</Link>
+          <Link href={'/gallery'}>Gallerie</Link>
         </li>
         <li>
           <Link href={'/menu'}>Menu</Link>
         </li>
       </ul>
-      {/* <a href="tel:0101010101" className={styles.phone}>+33 0101010101</a> */}
       <div className={styles.phone}>
-        <CopyToClipboard text="0101010101"/>
+        <CopyToClipboard type="phone" text="09 79 39 11 01"/>
       </div>
 
       <button
@@ -83,14 +84,18 @@ export default function NavBar() {
         </div>
         <ul>
           <li>
-            <Link href={'/gallery'}>Gallery</Link>
+            <Link href={'/'} onClick={toggleMenu}>Accueil</Link>
           </li>
           <li>
-            <Link href={'/menu'}>Menu</Link>
+            <Link href={'/gallery'} onClick={toggleMenu}>Gallerie</Link>
+          </li>
+          <li>
+            <Link href={'/menu'} onClick={toggleMenu}>Menu</Link>
           </li>
         </ul>
-        <div className={styles.burger_phone}>
-          <CopyToClipboard text="01010101101"/>
+        <div className={styles.burger_infos}>
+          <CopyToClipboard type="phone" text="01010101101"/>
+          <a target='_blank' href="https://www.google.fr/maps/place/La+P'tite+Taverne/@48.9683424,2.1600307,14.36z/data=!4m10!1m2!2m1!1sla+pt'ite+tavern!3m6!1s0x47e661a0d6113b35:0x597b80010c1c8d95!8m2!3d48.9704529!4d2.1806255!15sChBsYSBwJ3RpdGUgdGF2ZXJuWhIiEGxhIHAgdGl0ZSB0YXZlcm6SARFmcmVuY2hfcmVzdGF1cmFudOABAA!16s%2Fg%2F11y9r4ljlz?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">21 Quai de Seine, 95530 La Frette-sur-Seine</a>
         </div>
       </div>
     </nav>

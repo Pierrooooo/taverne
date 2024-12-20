@@ -21,6 +21,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/utils/fonts.js", "src/app/components/hero", "src/app/components/scrollSpy/scrollSpy.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/utils/fonts.ts", "src/app/components/hero", "src/app/components/scrollSpy/scrollSpy.js"],
   "exclude": ["node_modules"]
 }

@@ -1,17 +1,20 @@
 'use client';
 
 import { useEffect } from 'react';
-import GLightbox from 'glightbox';
-import 'glightbox/dist/css/glightbox.css';
 import Hero from '../components/hero/hero';
 import styles from './page.module.css';
 import Image from 'next/image';
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import 'photoswipe/style.css';
 
 export default function Menu() {
   useEffect(() => {
-    const lightbox = GLightbox({
-      selector: '[data-glightbox="gallery"]',
+    const lightbox = new PhotoSwipeLightbox({
+      gallery: '#gallery',
+      children: 'a',
+      pswpModule: () => import('photoswipe'),
     });
+    lightbox.init();
 
     return () => {
       lightbox.destroy();
@@ -22,8 +25,13 @@ export default function Menu() {
     <main>
       <Hero title="Menu" imageSrc="/assets/images/hero.jpg" />
 
-      <section className={`${styles.menuContainer} section_menu`}>
-        <a href="/assets/images/menu1.png" data-glightbox="gallery" className={styles.menuItem}>
+      <section id="gallery" className={`${styles.menuContainer} section_menu`}>
+        <a
+          href="/assets/images/menu1.png"
+          data-pswp-width="800"
+          data-pswp-height="800"
+          className={styles.menuItem}
+        >
           <Image
             height={800}
             width={800}
@@ -32,7 +40,12 @@ export default function Menu() {
             className={styles.menuImage}
           />
         </a>
-        <a href="/assets/images/menu2.png" data-glightbox="gallery" className={styles.menuItem}>
+        <a
+          href="/assets/images/menu2.png"
+          data-pswp-width="800"
+          data-pswp-height="800"
+          className={styles.menuItem}
+        >
           <Image
             height={800}
             width={800}

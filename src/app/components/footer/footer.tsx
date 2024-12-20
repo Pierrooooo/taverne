@@ -28,7 +28,7 @@ export default function Footer(): JSX.Element {
                     <p className="title">Contact</p>
                     <ul>
                         <li>
-                            <CopyToClipboard text="+33 0979391101"/>
+                            <CopyToClipboard type="phone" text="09 79 39 11 01"/>
                         </li>
                         <li>
                             <CopyToClipboard text="lerestautdehervé@gmail.com"/>

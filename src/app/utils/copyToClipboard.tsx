@@ -2,9 +2,10 @@ import { useState } from "react";
 
 type CopyToClipboardProps = {
   text: string;
+  type?: "default" | "phone";
 };
 
-const CopyToClipboard: React.FC<CopyToClipboardProps> = ({ text }) => {
+const CopyToClipboard: React.FC<CopyToClipboardProps> = ({ text, type = "default" }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -18,8 +19,27 @@ const CopyToClipboard: React.FC<CopyToClipboardProps> = ({ text }) => {
     }
   };
 
+  let isMobile = false;
+  if (typeof window !== "undefined" && window.innerWidth < 768) {
+    isMobile = true;
+  }
+
+  if (type === "phone" && isMobile) {
+    return (
+      <a
+        href={`tel:${text}`}
+        style={{ textDecoration: "none", color: "inherit", cursor: "pointer" }}
+      >
+        {text}
+      </a>
+    );
+  }
+
   return (
-    <div style={{ position: "relative", display: "inline-block", cursor: "pointer" }} onClick={handleCopy}>
+    <div
+      style={{ position: "relative", width: "fit-content", cursor: "pointer" }}
+      onClick={handleCopy}
+    >
       <span>{text}</span>
       {copied && (
         <span
@@ -34,7 +54,7 @@ const CopyToClipboard: React.FC<CopyToClipboardProps> = ({ text }) => {
             fontSize: "12px",
           }}
         >
-          Copied !
+          Copied!
         </span>
       )}
     </div>
