@@ -29,23 +29,27 @@ export default function Gallery() {
   }, []);
 
   const tab1Images = [
-    '/assets/images/homelette.jpeg',
-    '/assets/images/homelette2.jpeg',
-    '/assets/images/painperdu.jpeg',
-    '/assets/images/brouillioeuf.jpg',
-    '/assets/images/jacques.jpeg',
-    '/assets/images/jambon.jpeg',
-    '/assets/images/cremebrulée.jpeg',
-    '/assets/images/planche.jpeg',
-    '/assets/images/planche2.jpeg',
-    '/assets/images/pouletriz.jpeg',
-    '/assets/images/tiramisu.jpeg',
-    '/assets/images/soupe.jpeg',
+    { src: '/assets/images/homelette.jpeg', width: 900, height: 1600 },
+    { src: '/assets/images/homelette2.jpeg', width: 2050, height: 1150 },
+    { src: '/assets/images/painperdu.jpeg', width: 2050, height: 1150 },
+    { src: '/assets/images/brouillioeuf.jpg', width: 2050, height: 1150 },
+    { src: '/assets/images/jacques.jpeg', width: 900, height: 1600 },
+    { src: '/assets/images/jambon.jpeg', width: 2040, height: 1530 },
+    { src: '/assets/images/cremebrulée.jpeg', width: 1500, height: 1740 },
+    { src: '/assets/images/planche.jpeg', width: 800, height: 1600 },
+    { src: '/assets/images/planche2.jpeg', width: 1530, height: 2040 },
+    { src: '/assets/images/pouletriz.jpeg', width: 900, height: 1600 },
+    { src: '/assets/images/tiramisu.jpeg', width: 2050, height: 2020 },
+    { src: '/assets/images/soupe.jpeg', width: 900, height: 1600 },
+    { src: '/assets/images/chocolat.jpeg', width: 1120, height: 2000 },
   ];
 
   const tab2Images = [
-    ''
+    { src: '', width: 0, height: 0 },
   ];
+
+  const validTab1Images = tab1Images.filter((image) => image.src.trim() !== '');
+  const validTab2Images = tab2Images.filter((image) => image.src.trim() !== '');
 
   return (
     <main>
@@ -53,7 +57,7 @@ export default function Gallery() {
 
       <section className={`${styles.galleryContainer} section_gallery`}>
         <div className={styles.tabContainer}>
-          {tab1Images.filter((img) => img.trim() !== '').length > 0 && (
+          {validTab1Images.length > 0 && (
             <button
               className={`${styles.tab} ${activeTab === 'Tab1' ? styles.activeTab : ''}`}
               onClick={() => handleTabClick('Tab1')}
@@ -61,28 +65,30 @@ export default function Gallery() {
               Plats
             </button>
           )}
-          {tab2Images.filter((img) => img.trim() !== '').length > 0 && (
+          {validTab2Images.length > 0 && (
             <button
               className={`${styles.tab} ${activeTab === 'Tab2' ? styles.activeTab : ''}`}
               onClick={() => handleTabClick('Tab2')}
             >
-              Restaurant
+              Le Restaurant
             </button>
           )}
         </div>
 
         <div id="gallery" className={styles.imageGrid}>
           {activeTab === 'Tab1' &&
-            tab1Images.map((image, index) => (
+            validTab1Images.map((image, index) => (
               <a
                 key={index}
-                href={image}
+                href={image.src}
+                data-pswp-width={image.width}
+                data-pswp-height={image.height}
                 className={styles.imageContainer}
               >
                 <Image
                   height={0}
                   width={0}
-                  src={image}
+                  src={image.src}
                   alt={`Tab1 Image ${index + 1}`}
                   className={styles.image}
                   sizes="100vw"
@@ -91,18 +97,18 @@ export default function Gallery() {
             ))}
 
           {activeTab === 'Tab2' &&
-            tab2Images.map((image, index) => (
+            validTab2Images.map((image, index) => (
               <a
                 key={index}
-                href={image}
-                data-pswp-width="auto"
-                data-pswp-height="100vh"
+                href={image.src}
+                data-pswp-width={image.width}
+                data-pswp-height={image.height}
                 className={styles.imageContainer}
               >
                 <Image
                   height={0}
                   width={0}
-                  src={image}
+                  src={image.src}
                   alt={`Tab2 Image ${index + 1}`}
                   className={styles.image}
                   sizes="100vw"

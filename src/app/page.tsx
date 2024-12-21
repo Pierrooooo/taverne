@@ -15,6 +15,7 @@ export default function Home() {
         title="La P'tite Taverne"
         imageSrc="/assets/images/hero.jpg"
       />
+      {/* <Map /> */}
       <Edito 
         title='Edito'
         imageSrc='/assets/images/hero.jpg'
@@ -22,7 +23,6 @@ export default function Home() {
         invert={true}
       />
       <VisualStory />
-      {/* <Map /> */}
       <Testimonials />
       <Quote />
       <GridLayout />

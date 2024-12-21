@@ -28,13 +28,13 @@ export default function Menu() {
       <section id="gallery" className={`${styles.menuContainer} section_menu`}>
         <a
           href="/assets/images/menu1.png"
-          data-pswp-width="800"
-          data-pswp-height="800"
+          data-pswp-width="872"
+          data-pswp-height="1240"
           className={styles.menuItem}
         >
           <Image
-            height={800}
-            width={800}
+            height={1240}
+            width={870}
             src="/assets/images/menu1.png"
             alt="Menu Item 1"
             className={styles.menuImage}
@@ -42,13 +42,13 @@ export default function Menu() {
         </a>
         <a
           href="/assets/images/menu2.png"
-          data-pswp-width="800"
-          data-pswp-height="800"
+          data-pswp-width="872"
+          data-pswp-height="1240"
           className={styles.menuItem}
         >
           <Image
-            height={800}
-            width={800}
+            height={1240}
+            width={870}
             src="/assets/images/menu2.png"
             alt="Menu Item 2"
             className={styles.menuImage}
