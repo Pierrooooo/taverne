@@ -29,19 +29,19 @@ export default function Gallery() {
   }, []);
 
   const tab1Images = [
-    { src: '/assets/images/homelette.jpeg', width: 900, height: 1600 },
-    { src: '/assets/images/homelette2.jpeg', width: 2050, height: 1150 },
-    { src: '/assets/images/painperdu.jpeg', width: 2050, height: 1150 },
+    { src: '/assets/images/homelette.jpg', width: 900, height: 1600 },
+    { src: '/assets/images/homelette2.jpg', width: 2050, height: 1150 },
+    { src: '/assets/images/painperdu.jpg', width: 2050, height: 1150 },
     { src: '/assets/images/brouillioeuf.jpg', width: 2050, height: 1150 },
-    { src: '/assets/images/jacques.jpeg', width: 900, height: 1600 },
-    { src: '/assets/images/jambon.jpeg', width: 2040, height: 1530 },
-    { src: '/assets/images/cremebrulée.jpeg', width: 1500, height: 1740 },
-    { src: '/assets/images/planche.jpeg', width: 800, height: 1600 },
-    { src: '/assets/images/planche2.jpeg', width: 1530, height: 2040 },
-    { src: '/assets/images/pouletriz.jpeg', width: 900, height: 1600 },
-    { src: '/assets/images/tiramisu.jpeg', width: 2050, height: 2020 },
-    { src: '/assets/images/soupe.jpeg', width: 900, height: 1600 },
-    { src: '/assets/images/chocolat.jpeg', width: 1120, height: 2000 },
+    { src: '/assets/images/jacques.jpg', width: 900, height: 1600 },
+    { src: '/assets/images/jambon.jpg', width: 2040, height: 1530 },
+    { src: '/assets/images/cremebrulée.jpg', width: 1500, height: 1740 },
+    { src: '/assets/images/planche.jpg', width: 800, height: 1600 },
+    { src: '/assets/images/planche2.jpg', width: 1530, height: 2040 },
+    { src: '/assets/images/pouletriz.jpg', width: 900, height: 1600 },
+    { src: '/assets/images/tiramisu.jpg', width: 2050, height: 2020 },
+    { src: '/assets/images/soupe.jpg', width: 900, height: 1600 },
+    { src: '/assets/images/chocolat.jpg', width: 1120, height: 2000 },
   ];
 
   const tab2Images = [
