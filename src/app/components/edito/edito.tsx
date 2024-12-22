@@ -14,15 +14,15 @@ interface EditoProps {
 
 export default function Edito({ title, imageSrc, para, invert }: EditoProps): JSX.Element {
 
-  useEffect(() => {
-    slideDown(
-      ".section_edito .anim_img_bg",
-      ".section_edito .anim_img_bg",
-      "top bottom",
-      "bottom top",
-      100,
-    );
-  }, []);
+  // useEffect(() => {
+  //   slideDown(
+  //     ".section_edito .anim_img_bg",
+  //     ".section_edito .anim_img_bg",
+  //     "top bottom",
+  //     "bottom top",
+  //     100,
+  //   );
+  // }, []);
 
   return (
     <section className={`${styles.edito}${invert ? ` ${styles.invert}` : ''} section_edito`}>

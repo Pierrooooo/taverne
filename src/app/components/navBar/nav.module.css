@@ -16,9 +16,6 @@
     /* backdrop-filter: blur(20px); */
 }
 
-:global(body.scroll_down) .navbar {
-    top: -76px;
-}
 .navbar .image {
     width: 100%;
     height: 50px;

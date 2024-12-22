@@ -15,7 +15,7 @@ export default function Home() {
         title="La P'tite Taverne"
         imageSrc="/assets/images/hero.jpg"
       />
-      {/* <Map /> */}
+      <Map />
       <Edito 
         title='Edito'
         imageSrc='/assets/images/hero.jpg'

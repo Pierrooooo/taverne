@@ -24,6 +24,18 @@ export default function RootLayout({
     <html lang="fr">
       <Head>
         <link rel="shortcut icon" href="/assets/icons/logo.png" />
+        {/* <link
+          rel="icon"
+          href="/assets/icons/logo.png"
+          type="image/png"
+          sizes="16x16"
+        /> */}
+        {/* <Link
+          rel="icon"
+          href="/assets/icons/logo.png"
+          type="image/png"
+          // sizes="32x32"
+      /> */}
       </Head>
       <body className={textFont.className}>
         <SmoothScrolling>
