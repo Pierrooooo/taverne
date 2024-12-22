@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type CopyToClipboardProps = {
   text: string;
@@ -7,6 +7,13 @@ type CopyToClipboardProps = {
 
 const CopyToClipboard: React.FC<CopyToClipboardProps> = ({ text, type = "default" }) => {
   const [copied, setCopied] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth < 768);
+    }
+  }, []);
 
   const handleCopy = async () => {
     try {
@@ -18,11 +25,6 @@ const CopyToClipboard: React.FC<CopyToClipboardProps> = ({ text, type = "default
       console.error("Failed to copy text: ", err);
     }
   };
-
-  let isMobile = false;
-  if (typeof window !== "undefined" && window.innerWidth < 768) {
-    isMobile = true;
-  }
 
   if (type === "phone" && isMobile) {
     return (
