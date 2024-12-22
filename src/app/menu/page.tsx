@@ -41,7 +41,7 @@ export default function Menu() {
           />
         </a>
         <a
-          href="/assets/images/menu2.png"
+          href="/assets/images/menu2.jpg"
           data-pswp-width="872"
           data-pswp-height="1240"
           className={styles.menuItem}
@@ -49,7 +49,7 @@ export default function Menu() {
           <Image
             height={1240}
             width={870}
-            src="/assets/images/menu2.png"
+            src="/assets/images/menu2.jpg"
             alt="Menu Item 2"
             className={styles.menuImage}
           />
