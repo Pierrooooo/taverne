@@ -10,7 +10,7 @@ export default function VisualStory(): JSX.Element {
             <div className={styles.visual_story_grid}>
                 <div className={styles.image}>
                     <Image 
-                        src={'/assets/images/chocolat.jpeg'}
+                        src={'/assets/images/chocolat.jpg'}
                         alt=""
                         width={500}
                         height={500}
@@ -28,7 +28,7 @@ export default function VisualStory(): JSX.Element {
                 </div>
                 <div className={styles.image}>
                     <Image 
-                        src={'/assets/images/planche2.jpeg'}
+                        src={'/assets/images/planche2.jpg'}
                         alt=""
                         width={500}
                         height={500}
