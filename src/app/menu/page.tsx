@@ -27,7 +27,7 @@ export default function Menu() {
 
       <section id="gallery" className={`${styles.menuContainer} section_menu`}>
         <a
-          href="/assets/images/menu1.png"
+          href="/assets/images/menu1.jpg"
           data-pswp-width="872"
           data-pswp-height="1240"
           className={styles.menuItem}
@@ -35,7 +35,7 @@ export default function Menu() {
           <Image
             height={1240}
             width={870}
-            src="/assets/images/menu1.png"
+            src="/assets/images/menu1.jpg"
             alt="Menu Item 1"
             className={styles.menuImage}
           />
