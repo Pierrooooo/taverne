@@ -30,6 +30,7 @@ export default function Gallery() {
 
   const tab1Images = [
     { src: '/assets/images/homelette.jpg', width: 900, height: 1600 },
+    { src: '/assets/images/terrine.jpeg', width: 4000, height: 3000 },
     { src: '/assets/images/homelette2.jpg', width: 2050, height: 1150 },
     { src: '/assets/images/painperdu.jpg', width: 2050, height: 1150 },
     { src: '/assets/images/brouillioeuf.jpg', width: 2050, height: 1150 },

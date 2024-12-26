@@ -10,31 +10,30 @@ interface Testimonial {
     id: string;
     text: string;
     name: string;
-    profession: string;
+    profession?: string;
     imageUrl: string;
 }
 
 const testimonials: Testimonial[] = [
     {
         id: '1',
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue habitant accumsan, parturient orci ac etiam congugue habitant accumsan, parturient orci ac etiam congue mi.",
-        name: "John Doe",
-        profession: "Blogger",
-        imageUrl: "/assets/images/avatar.jpg"
+        text: "Une très bonne soirée passé dans une petite taverne sympathique et qui s'installe progressivement après plusieurs passages et plusieurs plats essayer aucune déception pour le moment, je recommande fortement!!  Faites du bouche à oreille pour cette belle petite adresse !",
+        name: "Max",
+        imageUrl: "/assets/images/max.png"
     },
     {
         id: '2',
-        text: "Pellentesque ornare nunc nisl. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        name: "Jane Smith",
-        profession: "Designer",
-        imageUrl: "/assets/images/avatar.jpg"
+        text: "Le restaurant est vraiment sympa, le restaurateur est super attentif et à l’écoute. La nourriture est délicieuse, chaque plat est bien préparé et les saveurs sont parfaitement équilibrées. Le service est rapide et agréable, ce qui rend l’expérience encore plus agréable. C’est un endroit que je recommande sans hésiter pour un bon repas.",
+        name: "Rose",
+        profession: "Guide local",
+        imageUrl: "/assets/images/rose.png"
     },
     {
         id: '3',
-        text: "Consectetur adipiscing elit. Quisque fermentum malesuada nisi, ac viverra urna sollicitudin in.",
-        name: "Alex Johnson",
-        profession: "Photographer",
-        imageUrl: "/assets/images/avatar.jpg"
+        text: "Excellente expérience à La Ptite ! TaverneCuisine de qualité fait maison et de très bon vins. Je recommande fortement. Enfin un restaurant de qualité à la Frette sur Seine ",
+        name: "Paul",
+        profession: "Guide local",
+        imageUrl: "/assets/images/paul.png"
     }
 ];
 
@@ -76,6 +75,7 @@ export default function Testimonials(): JSX.Element {
                                 <div>
                                     <p className={styles.testimonial_name}>{testimonial.name}</p>
                                     <p className={styles.testimonial_profession}>{testimonial.profession}</p>
+
                                 </div>
                             </div>
                         </div>

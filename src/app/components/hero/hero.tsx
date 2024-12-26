@@ -22,7 +22,7 @@ export default function Hero({ title, imageSrc }: HeroProps): JSX.Element {
       }
     };
 
-    // slideDown("#hero .anim_img_bg", "#hero .anim_img_bg", "center center", "bottom top", 70);
+    slideDown("#hero .anim_img_bg", "#hero .anim_img_bg", "center center", "bottom top", 70);
 
     handleResize();
 

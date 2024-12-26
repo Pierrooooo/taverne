@@ -30,6 +30,10 @@
     display: none;
 }
 
+.text + .text {
+    margin-top: 12px;
+}
+
 .mob_title {
     z-index: 10;
     display: block;

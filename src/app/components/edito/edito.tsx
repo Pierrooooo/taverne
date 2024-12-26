@@ -9,20 +9,22 @@ interface EditoProps {
     title: string;
     imageSrc: string;
     para: string;
+    para_2?: string;
+    para_3?: string;
     invert: boolean;
 }
 
-export default function Edito({ title, imageSrc, para, invert }: EditoProps): JSX.Element {
+export default function Edito({ title, imageSrc, para, para_2, para_3, invert }: EditoProps): JSX.Element {
 
-  // useEffect(() => {
-  //   slideDown(
-  //     ".section_edito .anim_img_bg",
-  //     ".section_edito .anim_img_bg",
-  //     "top bottom",
-  //     "bottom top",
-  //     100,
-  //   );
-  // }, []);
+  useEffect(() => {
+    slideDown(
+      ".section_edito .anim_img_bg",
+      ".section_edito .anim_img_bg",
+      "top bottom",
+      "bottom top",
+      100,
+    );
+  }, []);
 
   return (
     <section className={`${styles.edito}${invert ? ` ${styles.invert}` : ''} section_edito`}>
@@ -36,6 +38,8 @@ export default function Edito({ title, imageSrc, para, invert }: EditoProps): JS
       <div className={styles.content}>
         <h2 className={`${styles.title} title_XL`}>{title}</h2>
         <p className={`${styles.text} para_s`}>{para}</p>
+        <p className={`${styles.text} para_s`}>{para_2}</p>
+        <p className={`${styles.text} para_s`}>{para_3}</p>
       </div>
     </section>
   );
