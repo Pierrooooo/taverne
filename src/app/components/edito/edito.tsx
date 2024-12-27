@@ -27,7 +27,7 @@ export default function Edito({ title, imageSrc, para, para_2, para_3, invert }:
   }, []);
 
   return (
-    <section className={`${styles.edito}${invert ? ` ${styles.invert}` : ''} section_edito`}>
+    <section className={`${styles.edito}${invert ? ` ${styles.invert}` : ''} section_edito container`}>
 
       <div className={styles.image_div}>
         <h2 className={`${styles.mob_title} title_XL`}>{title}</h2>

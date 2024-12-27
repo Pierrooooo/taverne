@@ -15,7 +15,7 @@ export default function Home() {
         title="La P'tite Taverne"
         imageSrc="/assets/images/hero.jpeg"
       />
-      <Map />
+      <VisualStory />
       <Edito 
         title='Hervé Martin'
         imageSrc='/assets/images/herve.jpeg'
@@ -24,10 +24,9 @@ export default function Home() {
         para_3='Reconnu pour mon savoir-faire et ma passion des produits frais, je continue de séduire les papilles avec une cuisine française traditionnelle et généreuse.'
         invert={true}
       />
-      <VisualStory />
+      <Quote />
+      <Map />
       <Testimonials />
-      {/* <Quote /> */}
-      <GridLayout />
     </main>
   );
 }

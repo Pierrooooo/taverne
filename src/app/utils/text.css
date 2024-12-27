@@ -1,3 +1,11 @@
+.title, .title_L, .title_XL, .title_XXL {
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.para, .para_s {
+    font-family: 'Nunito_Sans', sans-serif;
+}
+
 .title {
     font-size: 24px;
     line-height: 32px;
@@ -27,22 +35,6 @@
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0;
-}
-
-.title, .title_L, .title_XL, .title_XXL {
-    font-family: 'Bricolage Grotesque', sans-serif;
-}
-
-.para, .para_s {
-    font-family: 'Nunito_Sans', sans-serif;
-}
-
-
-@media (max-width: 768px) {
-    .title, .title_L, .title_XL, .title_XXL, .para, .para_s {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
 }
 
 @media (min-width: 768px) {

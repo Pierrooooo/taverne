@@ -9,7 +9,7 @@ export default function Footer(): JSX.Element {
 
     return (
         <footer className={styles.footer}>
-            <div className={styles.footer_infos}>
+            <div className={`${styles.footer_infos} small_container`}>
                 <div className={styles.footer_info}>
                     <p className="title">Navigation</p>
                     <ul>

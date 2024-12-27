@@ -23,8 +23,8 @@ export default function Map(): JSX.Element {
     // }
 
     return (
-        <section className={styles.section_map}>
-            <h2 className={`${styles.title} title_XL`}>Carte & Horaires</h2>
+        <section className={`${styles.section_map} container`}>
+            <h2 className={`${styles.title} title_XL`}>Accès & Horaires</h2>
             <a className={`${styles.location} para_s`} target='_blank' href="https://www.google.fr/maps/place/La+P'tite+Taverne/@48.9683424,2.1600307,14.36z/data=!4m10!1m2!2m1!1sla+pt'ite+tavern!3m6!1s0x47e661a0d6113b35:0x597b80010c1c8d95!8m2!3d48.9704529!4d2.1806255!15sChBsYSBwJ3RpdGUgdGF2ZXJuWhIiEGxhIHAgdGl0ZSB0YXZlcm6SARFmcmVuY2hfcmVzdGF1cmFudOABAA!16s%2Fg%2F11y9r4ljlz?entry=ttu&g_ep=EgoyMDI0MTIxMS4wIKXMDSoASAFQAw%3D%3D">
                 21 Quai de Seine, 95530 <strong>La Frette-sur-Seine</strong>
             </a>

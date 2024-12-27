@@ -1,9 +1,12 @@
+.visualstory {
+}
+
 .section_title {
-    margin: 0 20px;
+    /* margin: 0 20px; */
 }
 
 .visual_story_grid {
-    margin: 0 20px;
+    /* margin: 0 20px; */
     margin-top: 42px;
     display: flex;
     flex-direction: column;
@@ -41,12 +44,12 @@
 
 @media (min-width: 768px) {
     .section_title {
-        margin: 0 60px;
+        /* margin: 0 60px; */
     }
 
     .visual_story_grid {
-        margin-left: 60px;
-        margin-right: 60px;
+        /* margin-left: 60px;
+        margin-right: 60px; */
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(24, 20px);
@@ -78,12 +81,12 @@
 
 @media (min-width: 1024px) {
     .section_title {
-        margin: 0 90px;
+        /* margin: 0 90px; */
     }
 
     .visual_story_grid {
-        margin-left: 90px;
-        margin-right: 90px;
+        /* margin-left: 90px;
+        margin-right: 90px; */
         grid-template-rows: repeat(24, 30px);
         column-gap: 40px;
     }
@@ -101,12 +104,12 @@
 
 @media (min-width: 1400px) {
     .section_title {
-        margin: 0 140px;
+        /* margin: 0 140px; */
     }
 
     .visual_story_grid {
-        margin-left: 140px;
-        margin-right: 140px;
+        /* margin-left: 140px;
+        margin-right: 140px; */
         grid-template-rows: repeat(24, 20px);
         column-gap: 40px;
     }  

@@ -9,7 +9,7 @@
     justify-content: space-between;
     align-items: center;
     top: 0;
-    width: 100vw;
+    width: 100%;
     background-color: var(--white);
     transition: .3s;
     /* max-width: var(--max-width); */
@@ -210,20 +210,26 @@
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px) and (max-width: 1399px) {
     .navbar {
-        padding: 8px calc((1000px - 800px) / 2);
+        padding: 8px 90px;
     }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: 1400px) and (max-width: 1699px) {
     .navbar {
-        padding: 8px calc((1400px - 1100px) / 2);
+        padding: 8px 140px;
     }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1700px)  and (max-width: 1899px) {
     .navbar {
-        padding: 8px calc((100% - var(--max-width)) / 2);
+        padding: 8px 180px;
+    }
+}
+
+@media (min-width: 1900px) {
+    .navbar {
+        padding: 8px calc((100vw - 1700px) / 2);
     }
 }

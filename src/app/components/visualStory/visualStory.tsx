@@ -2,16 +2,30 @@
 
 import styles from './visualStory.module.css';
 import Image from "next/image";
+import { useEffect } from 'react';
+import { slideDown } from '@/app/animations/animationsgsap';
 
 export default function VisualStory(): JSX.Element {
+
+    useEffect(() => {
+        slideDown(
+        ".section_visualstory .anim_img_bg",
+        ".section_visualstory",
+        "top bottom",
+        "bottom top",
+        100,
+        );
+    }, []);
+
     return (
-        <section className={styles.visualstory}>
+        <section className={`${styles.visualstory} section_visualstory container`}>
             <h2 className={`${styles.section_title} title_XL`}>Restaurant La Frette</h2>
             <div className={styles.visual_story_grid}>
                 <div className={styles.image}>
                     <Image 
                         src={'/assets/images/chocolat.jpg'}
-                        alt=""
+                        className='anim_img_bg'
+                        alt="Mie cuit au chocolat"
                         width={500}
                         height={500}
                     />
@@ -29,7 +43,8 @@ export default function VisualStory(): JSX.Element {
                 <div className={styles.image}>
                     <Image 
                         src={'/assets/images/planche2.jpg'}
-                        alt=""
+                        alt="Planche de charcuterie"
+                        className='anim_img_bg'
                         width={500}
                         height={500}
                     />

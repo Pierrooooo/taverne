@@ -28,7 +28,6 @@
 
   --swiper-navigation-top-offset: 90%;
 
-
   --breakpoint-mobile: 768px;
   --breakpoint-tablet: 1024px;
   --breakpoint-l: 1400px;
@@ -67,7 +66,7 @@
 
 html,
 body {
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -118,6 +117,13 @@ strong:not(.bold) {
 }
 
 @media (min-width: 768px) {
+  section + section,
+  main + footer {
+    margin-top: 140px;
+  }
+}
+
+@media (min-width: 1200px) {
   section + section,
   main + footer {
     margin-top: 240px;

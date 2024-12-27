@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect } from 'react';
 import styles from './quote.module.css';
+import { slideDown } from "@/app/animations/animationsgsap";
 
 export default function Quote(): JSX.Element {
     const [windowWidth, setWindowWidth] = useState<number>(0);
@@ -15,6 +16,14 @@ export default function Quote(): JSX.Element {
           setWindowHeight(window.innerHeight * 0.4);
         }
       };
+
+      slideDown(
+        ".section_quote .anim_img_bg",
+        ".section_quote",
+        "top bottom",
+        "bottom top",
+        100
+      );
   
       handleResize();
 
@@ -26,16 +35,18 @@ export default function Quote(): JSX.Element {
     }, []);
 
     return (
-        <section className={styles.quote}>
+        <section className={`${styles.quote} section_quote`}>
             <Image 
-                className={styles.quote_bgimage} 
-                src="/assets/images/quote.jpg" 
+                className={`${styles.quote_bgimage} anim_img_bg`} 
+                src="/assets/images/hero.jpeg" 
                 width={windowWidth} 
                 height={windowHeight} 
                 alt="Hero background" 
             />
             <div className="overlay"></div>
-            <p className={`para`}>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et in sed in pellentesque ornare nunc nisl. Augue habitant accumsan, parturient orci ac etiam congue mi.</p>
+            <div className="small_container">
+              <p className={`para`}>“ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et in sed in pellentesque ornare nunc nisl. Augue habitant accumsan, parturient orci ac etiam congue mi.</p>
+            </div>
         </section>
     );
 }

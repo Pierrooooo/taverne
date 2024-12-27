@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./container.css";
 import "./utils/text.css";
 import "./custom-swiper.css";
 import dynamic from 'next/dynamic';
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <Head>
-        <link rel="shortcut icon" href="/assets/icons/logo.png" />
+        <link rel="icon" href="/assets/icons/logo.png" />
         {/* <link
           rel="icon"
           href="/assets/icons/logo.png"
