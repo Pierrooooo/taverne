@@ -23,7 +23,7 @@ export default function Menu() {
 
   return (
     <main>
-      <Hero title="Menu" imageSrc="/assets/images/hero.jpg" />
+      <Hero title="Menu" imageSrc="/assets/images/hero.jpeg" />
 
       <section id="gallery" className={`${styles.menuContainer} section_menu`}>
         <a
