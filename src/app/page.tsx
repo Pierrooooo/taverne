@@ -24,7 +24,7 @@ export default function Home() {
         para_3='Reconnu pour mon savoir-faire et ma passion des produits frais, je continue de séduire les papilles avec une cuisine française traditionnelle et généreuse.'
         invert={true}
       />
-      <Quote />
+      {/* <Quote /> */}
       <Map />
       <Testimonials />
     </main>
