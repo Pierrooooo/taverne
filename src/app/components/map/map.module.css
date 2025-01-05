@@ -45,12 +45,6 @@
 }
 
 @media (min-width: 768px) {
-    /* .section_map {
-        padding-left: 20px;
-        padding-right: 20px;
-        width: 100%;
-    } */
-
     .title {
         margin-bottom: 40px;
     }
@@ -58,6 +52,7 @@
     .hours {
         margin-top: 80px;
         flex: 1 1 40%;
+        max-width: 400px;
     }
 
     .hours_line + .hours_line {
@@ -77,11 +72,6 @@
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
-    /* .section_map {
-        padding-left: 20px;
-        padding-right: 20px;
-    } */
-
     .map {
         margin-top: 32px;
     }

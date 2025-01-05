@@ -75,7 +75,6 @@ export default function Testimonials(): JSX.Element {
                                 <div>
                                     <p className={styles.testimonial_name}>{testimonial.name}</p>
                                     <p className={styles.testimonial_profession}>{testimonial.profession}</p>
-
                                 </div>
                             </div>
                         </div>
