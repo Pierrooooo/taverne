@@ -10,7 +10,6 @@
     display: flex;
     justify-content: space-between;
     gap: 60px;
-    /* width: 100%; */
 }
 
 .footer_info {
@@ -44,7 +43,6 @@
 }
 
 .footer_bottom {
-    /* margin: 0 auto; */
     position: absolute;
     display: flex;
     padding: 0 20px;
@@ -55,12 +53,6 @@
 }
 
 @media (max-width: 768px) {
-
-    /* .footer {
-        height: fit-content;
-        padding: 0 20px;
-    } */
-
     .footer_infos {
         padding-top: 70px;
         flex-direction: column;

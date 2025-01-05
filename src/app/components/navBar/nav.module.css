@@ -12,8 +12,6 @@
     width: 100%;
     background-color: var(--white);
     transition: .3s;
-    /* max-width: var(--max-width); */
-    /* backdrop-filter: blur(20px); */
 }
 
 .navbar .image {
@@ -155,17 +153,14 @@
 .transis div:nth-child(3) {
     width: calc(100vw + 300px);
     background-color: var(--beige);
-    /* transition-delay: .1s; */
 }
 .transis div:nth-child(2) {
     width: calc(100vw + 200px);
     background-color: var(--brown);
-    /* transition-delay: .1s; */
     transform: translate3d(100px, 0, 0);
 }
 .transis div:nth-child(3) {
     width: calc(100vw + 100px);
-    /* transition-delay: .15s; */
     transform: translate3d(200px, 0, 0);
 }
 .burger.active + .burgerMenu .transis div:nth-child(1) {
