@@ -11,7 +11,7 @@ interface Testimonial {
     text: string;
     name: string;
     profession?: string;
-    imageUrl: string;
+    imageUrl?: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -34,7 +34,13 @@ const testimonials: Testimonial[] = [
         name: "Paul",
         profession: "Guide local",
         imageUrl: "/assets/images/paul.png"
-    }
+    },
+    // {
+    //     id: '4',
+    //     text: "Acceuil sympa, cusine délicieuse, rapport Qualité/prix tt a fait correct. La fine gueule que je suis vous recommande ce lieu",
+    //     name:"Marie Anne Cantin",
+    //     profession: "Guide local"
+    // }
 ];
 
 export default function Testimonials(): JSX.Element {
@@ -65,16 +71,21 @@ export default function Testimonials(): JSX.Element {
                                 “ {testimonial.text} ”
                             </p>
                             <div className={`${styles.testimonial_infos} para_S`}>
-                                <Image
-                                    src={testimonial.imageUrl}
-                                    alt={testimonial.name}
-                                    width={80}
-                                    height={80}
-                                    className={styles.testimonial_image}
-                                />
+                                {testimonial.imageUrl && (
+                                    <Image
+                                        src={testimonial.imageUrl}
+                                        alt={testimonial.name}
+                                        width={80}
+                                        height={80}
+                                        className={styles.testimonial_image}
+                                    />
+                                )}
                                 <div>
                                     <p className={styles.testimonial_name}>{testimonial.name}</p>
-                                    <p className={styles.testimonial_profession}>{testimonial.profession}</p>
+                                    {testimonial.profession && (
+                                        <p className={styles.testimonial_profession}>{testimonial.profession}</p>
+                                    )}
+
                                 </div>
                             </div>
                         </div>
