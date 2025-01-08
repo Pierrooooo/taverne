@@ -25,7 +25,7 @@ export default function Menu() {
     <main>
       <Hero title="Menu" imageSrc="/assets/images/hero.jpeg" />
 
-      <section id="gallery" className={`${styles.menuContainer} section_menu`}>
+      <section id="gallery" className={`${styles.menuContainer} container section_menu`}>
         <a
           href="/assets/images/menu1.jpg"
           data-pswp-width="872"
