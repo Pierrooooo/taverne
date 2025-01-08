@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
     },
     {
         id: '3',
-        text: "Excellente expérience à La Ptite ! TaverneCuisine de qualité fait maison et de très bon vins. Je recommande fortement. Enfin un restaurant de qualité à la Frette sur Seine ",
+        text: "Excellente expérience à La Ptite ! Taverne Cuisine de qualité fait maison et de très bon vins. Je recommande fortement. Enfin un restaurant de qualité à la Frette sur Seine ",
         name: "Paul",
         profession: "Guide local",
         imageUrl: "/assets/images/paul.png"

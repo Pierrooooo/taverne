@@ -13,7 +13,7 @@ const SmoothScrolling = dynamic(() => import("./SmoothScrolling"));
 
 export const metadata: Metadata = {
   title: "La P'tite Tavern",
-  description: "Restaurant La P'tite Tavern situé à la Frette, cuisine française, bistronomique.",
+  description: "Restaurant La P'tite Taverne situé à la Frette, cuisine française, bistronomique.",
 };
 
 export default function RootLayout({
