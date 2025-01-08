@@ -3,19 +3,49 @@
 import styles from './visualStory.module.css';
 import Image from "next/image";
 import { useEffect } from 'react';
-import { slideDown } from '@/app/animations/animationsgsap';
+import { slideDown, scrollReveal } from '@/app/animations/animationsgsap';
 
 export default function VisualStory(): JSX.Element {
 
     useEffect(() => {
         slideDown(
-        ".section_visualstory .anim_img_bg",
-        ".section_visualstory",
-        "top bottom",
-        "bottom top",
-        100,
+            ".section_visualstory .anim_img_bg",
+            ".section_visualstory",
+            "top bottom",
+            "bottom top",
+            100,
         );
+
+        scrollReveal(
+            ".section_visualstory h2",
+            ".section_visualstory",
+            "top bottom",
+            "bottom 20%",
+            false,
+            0
+        );
+
+        const titleIds = ['title1', 'title2', 'title3'];
+        titleIds.forEach((id) => {
+            scrollReveal(
+                `.section_visualstory #${id}`,
+                `.section_visualstory #${id}`,
+                "top bottom",
+                "bottom 20%"
+            );
+        });
+
+        const paraIds = ['para1', 'para2', 'para3', 'para4', 'para5', 'para6'];
+        paraIds.forEach((id) => {
+            scrollReveal(
+                `.section_visualstory #${id}`,
+                `.section_visualstory #${id}`,
+                "top bottom",
+                "bottom 20%"
+            );
+        });
     }, []);
+    
 
     return (
         <section className={`${styles.visualstory} section_visualstory container`}>
@@ -31,12 +61,12 @@ export default function VisualStory(): JSX.Element {
                     />
                 </div>
                 <div className={styles.texts}>
-                    <p className={`${styles.texts_title} title`}>Des produits frais</p>
-                    <p className={`${styles.texts_para} para_s`}>
+                    <p id="title1" className={`${styles.texts_title} title`}>Des produits frais</p>
+                    <p id="para1" className={`${styles.texts_para} para_s`}>
                         Nous sélectionnons nos ingrédients avec soin au marché Debussy à Sartrouville. 
                         Chaque plat est préparé avec des produits de saison, garantissant fraîcheur et saveurs authentiques dans toutes vos assiettes.
                     </p>
-                    <p className={`${styles.texts_para} para_s`}>
+                    <p id="para2" className={`${styles.texts_para} para_s`}>
                         Notre engagement envers la qualité des produits reflète notre volonté de proposer une cuisine qui respecte le goût et l origine des aliments, pour une expérience culinaire incomparable.
                     </p>
                 </div>
@@ -51,28 +81,27 @@ export default function VisualStory(): JSX.Element {
                 </div>
 
                 <div className={styles.texts}>
-                    <p className={`${styles.texts_title} title`}>Tradition française</p>
-                    <p className={`${styles.texts_para} para_s`}>
+                    <p id="title2" className={`${styles.texts_title} title`}>Tradition française</p>
+                    <p id="para3" className={`${styles.texts_para} para_s`}>
                         Notre carte rend hommage à la richesse de la gastronomie française. Chaque recette célèbre les saveurs du terroir, 
                         mêlant classiques intemporels et créations modernes. Nous proposons également de généreuses planches de charcuterie 
                         et de fromages sélectionnés avec soin pour accompagner un apéritif copieux.
                     </p>
-                    <p className={`${styles.texts_para} para_s`}>
+                    <p id="para4" className={`${styles.texts_para} para_s`}>
                         C’est dans cet esprit que nous vous invitons à redécouvrir les plaisirs de la table, dans une ambiance conviviale et élégante.
                     </p>
                 </div>
 
                 <div className={styles.texts}>
-                    <p className={`${styles.texts_para} para_s`}>Nous sommes heureux de vous accueillir depuis octobre 2024</p>
-                    <p className={`${styles.texts_title} title`}>La Frette</p>
-                    <p className={`${styles.texts_para} para_s`}>
+                    <p id="para5" className={`${styles.texts_para} para_s`}>Nous sommes heureux de vous accueillir depuis octobre 2024</p>
+                    <p id="title3" className={`${styles.texts_title} title`}>La Frette</p>
+                    <p id="para6" className={`${styles.texts_para} para_s`}>
                         Situé à La Frette, notre restaurant vous invite à un voyage culinaire dans un cadre chaleureux et authentique. 
                         Entre esprit de taverne moderne et ambiance cosy, nous avons pensé chaque détail pour que vous vous sentiez comme chez vous, 
                         tout en profitant de plats savoureux.
                     </p>
                 </div>
             </div>
-
         </section>
     );
 }

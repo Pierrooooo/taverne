@@ -81,7 +81,8 @@ export const scrollReveal = (
     trigger: string,
     start: string = "top 80%",
     end: string = "bottom 20%",
-    scrub: boolean = false
+    scrub: boolean = false,
+    delay: number = 0
 ) => {
     if (typeof window !== "undefined") {
         const ScrollTrigger = require("gsap/ScrollTrigger").ScrollTrigger;
@@ -94,6 +95,7 @@ export const scrollReveal = (
                 opacity: 1,
                 y: 0,
                 duration: 1,
+                delay,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger,
