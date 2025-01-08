@@ -3,7 +3,6 @@
     flex-wrap: wrap;
     gap: 16px;
     justify-content: center;
-    width: 100%;
 }
   
 .menuItem {
@@ -29,6 +28,10 @@
 }
 
 @media (min-width: 1700px) {
+    .menuContainer {
+        width: 100%;
+    }
+
     .menuItem {
         max-width: 550px;
     }
