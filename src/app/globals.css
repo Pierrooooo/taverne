@@ -78,7 +78,8 @@ main {
 }
 
 .anim_img_bg {
-  scale: 1.15;
+  scale: 1.1;
+  transform: translateY(-70px);
   transform-origin: top;
 }
 

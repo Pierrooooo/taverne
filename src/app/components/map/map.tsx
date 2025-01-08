@@ -1,15 +1,10 @@
 'use client';
 
 import Image from 'next/image';
-// import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import { useEffect } from 'react';
 import styles from './map.module.css';
 import { scrollReveal } from '@/app/animations/animationsgsap';
 
-// const containerStyle = {
-//     width: '100%',
-//     height: '500px',
-// };
 
 // const center = {
 //     lat: 48.9739,
@@ -17,12 +12,6 @@ import { scrollReveal } from '@/app/animations/animationsgsap';
 // };
 
 export default function Map(): JSX.Element {
-    // const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-
-    // if (!apiKey) {
-    //     console.error("Google Maps API key is missing!");
-    //     return <div>Error: Missing Google Maps API key</div>;
-    // }
 
     useEffect(() => {
         scrollReveal(
@@ -87,14 +76,6 @@ export default function Map(): JSX.Element {
                 </div>
             </div>
             <p id='para8' className={`${styles.text} para_s`}>Nous sommes ravis de vous accueillir dans notre restaurant ! Que ce soit pour un dîner entre amis, un repas en famille ou apéro entre collègues. Retrouvez-nous facilement grâce à la carte, et laissez-vous guider jusqu’à notre table pour une expérience culinaire mémorable. À très bientôt !</p>
-            {/* <LoadScript googleMapsApiKey={apiKey}>
-                <GoogleMap
-                    mapContainerStyle={containerStyle}
-                    center={center}
-                    zoom={10}
-                >
-                </GoogleMap>
-            </LoadScript> */}
         </section>
     );
 }

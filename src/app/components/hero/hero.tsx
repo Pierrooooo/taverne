@@ -22,7 +22,19 @@ export default function Hero({ title, imageSrc }: HeroProps): JSX.Element {
       }
     };
 
-    slideDown("#hero .anim_img_bg", "#hero .anim_img_bg", "center center", "bottom top", 70);
+    const distanceCenterWindowToCenterHero = window.innerHeight * 0.5 - window.innerHeight * 0.35
+
+    slideDown(
+      "#hero .anim_img_bg",
+      "#hero .anim_img_bg",
+      `center+=${distanceCenterWindowToCenterHero} center`,
+      "bottom top",
+      window.innerHeight * 0.08,
+      undefined,
+      undefined,
+      undefined,
+      true
+    );
 
     handleResize();
 
