@@ -29,11 +29,7 @@ export default function Hero({ title, imageSrc }: HeroProps): JSX.Element {
       "#hero .anim_img_bg",
       `center+=${distanceCenterWindowToCenterHero} center`,
       "bottom top",
-      window.innerHeight * 0.08,
-      undefined,
-      undefined,
-      undefined,
-      true
+      window.innerHeight * 0.08
     );
 
     handleResize();
