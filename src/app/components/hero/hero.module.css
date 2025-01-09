@@ -24,9 +24,21 @@
 
 .hero_title {
     padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 24px;
     max-width: 660px;
     text-align: center;
     color: var(--beige);
+}
+
+.hero_title>span {
+    overflow: hidden;
+}
+.hero_title>span>span {
+    display: inline-block;
+    transform: translate3d(0, 110px, 0);
 }
 
 .scroll_text {
@@ -34,11 +46,14 @@
     display: none;
     bottom: 48px;
     color: var(--beige);
-    transform: rotate(90deg);
+    /* transform: rotate(90deg); */
+    opacity: 0;
+    transform: translate3d(0, 20px, 0) rotate(90deg);
+    animation: scroll_container_appears .3s 1.3s forwards ease-out;
 }
 
 .scroll_text span {
-    animation: scroll_text 2.5s infinite linear;
+    animation: scroll_text 2.5s infinite ease-out;
     position: relative;
 }
 .scroll_text span:nth-child(2) {
@@ -89,6 +104,17 @@
     to {
         transform: translateY(0);
         opacity: 0;
+    }
+}
+
+@keyframes scroll_container_appears {
+    from{
+        opacity: 0;
+        transform: translate3d(0, 20px, 0) rotate(90deg);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0, 0, 0) rotate(90deg);
     }
 }
 

@@ -10,7 +10,7 @@ export default function FourOhFour() {
   return (
     <main>
       <NavBar />
-      <Hero title="Error 404" imageSrc="/assets/images/hero.jpg" />
+      <Hero heroTitle="Error 404" imageSrc="/assets/images/hero.jpg" />
       <Footer />
     </main>
   );

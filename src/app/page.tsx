@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main>
       <Hero
-        title="La P'tite Taverne"
+        heroTitle="La P'tite Taverne"
         imageSrc="/assets/images/hero.jpeg"
       />
       <VisualStory />

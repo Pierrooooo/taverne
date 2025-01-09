@@ -3,14 +3,15 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import styles from './hero.module.css';
-import { slideDown } from '@/app/animations/animationsgsap';
+import { slideDown, slideInFromBottom } from '@/app/animations/animationsgsap';
+import { WordWrapper } from '@/app/utils/wordWrapper';
 
 interface HeroProps {
-  title: string;
+  heroTitle: string;
   imageSrc: string;
 }
 
-export default function Hero({ title, imageSrc }: HeroProps): JSX.Element {
+export default function Hero({ heroTitle, imageSrc }: HeroProps): JSX.Element {
   const [windowWidth, setWindowWidth] = useState<number>(1920);
   const [windowHeight, setWindowHeight] = useState<number>(1080);
 
@@ -31,6 +32,14 @@ export default function Hero({ title, imageSrc }: HeroProps): JSX.Element {
       "bottom top",
       window.innerHeight * 0.08
     );
+
+    slideInFromBottom(
+      ".word .letter",
+      .4,
+      .5,
+      "120",
+      .015
+    )
 
     handleResize();
 
@@ -53,7 +62,10 @@ export default function Hero({ title, imageSrc }: HeroProps): JSX.Element {
         />
       </div>
       <div className="overlay"></div>
-      <h1 className={`${styles.hero_title} title_XL`}>{title}</h1>
+      <h1 className={`${styles.hero_title} title_XL`}>
+        {heroTitle && <WordWrapper title={heroTitle} letterWrapper={true}/>}
+      </h1>
+
       <p className={styles.scroll_text}>
         <span>S</span>
         <span>C</span>

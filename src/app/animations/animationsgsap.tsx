@@ -51,18 +51,20 @@ export const slideDown = (
   };
   
 
-export const slideInFromLeft = (
+  export const slideInFromBottom = (
     target: gsap.TweenTarget,
     duration: number = 1,
     delay: number = 0,
-    distance: string = "100px"
+    distance: string = "100px",
+    stagger: number = 0
 ) => {
-    gsap.fromTo(
+    gsap.to(
         target,
-        { x: `-${distance}`, opacity: 0 },
-        { x: "0", opacity: 1, duration, delay, ease: "power2.out" }
+        // { y: `${distance}` },
+        { y: "0", duration, delay, stagger, ease: "power2.out" }
     );
 };
+
 
 export const scaleUp = (
     target: gsap.TweenTarget,
@@ -124,7 +126,7 @@ export const createTimeline = () => {
 export default {
   fadeIn,
   slideDown,
-  slideInFromLeft,
+  slideInFromBottom,
   scaleUp,
   scrollReveal,
   killAllAnimations,

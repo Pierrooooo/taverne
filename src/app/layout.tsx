@@ -3,7 +3,7 @@ import "./globals.css";
 import "./container.css";
 import "./utils/text.css";
 import "./custom-swiper.css";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import { textFont } from "./utils/fonts";
 import Footer from "./components/footer/footer";
 import NavBar from "./components/navBar/navBar";
