@@ -18,20 +18,14 @@ export default function VisualStory(): JSX.Element {
 
         scrollReveal(
             ".section_visualstory h2",
-            ".section_visualstory",
-            "top bottom",
-            "bottom 20%",
-            false,
-            0
+            ".section_visualstory"
         );
 
         const titleIds = ['title1', 'title2', 'title3'];
         titleIds.forEach((id) => {
             scrollReveal(
                 `.section_visualstory #${id}`,
-                `.section_visualstory #${id}`,
-                "top bottom",
-                "bottom 20%"
+                `.section_visualstory #${id}`
             );
         });
 
@@ -39,9 +33,7 @@ export default function VisualStory(): JSX.Element {
         paraIds.forEach((id) => {
             scrollReveal(
                 `.section_visualstory #${id}`,
-                `.section_visualstory #${id}`,
-                "top bottom",
-                "bottom 20%"
+                `.section_visualstory #${id}`
             );
         });
     }, []);

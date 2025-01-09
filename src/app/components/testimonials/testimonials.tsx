@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './testimonials.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { scrollReveal } from '@/app/animations/animationsgsap';
 
 interface Testimonial {
     id: string;
@@ -35,15 +36,34 @@ const testimonials: Testimonial[] = [
         profession: "Guide local",
         imageUrl: "/assets/images/paul.png"
     },
-    // {
-    //     id: '4',
-    //     text: "Acceuil sympa, cusine délicieuse, rapport Qualité/prix tt a fait correct. La fine gueule que je suis vous recommande ce lieu",
-    //     name:"Marie Anne Cantin",
-    //     profession: "Guide local"
-    // }
+    {
+        id: '4',
+        text: "Acceuil sympa, cusine délicieuse, rapport Qualité/prix tt a fait correct. La fine gueule que je suis vous recommande ce lieu",
+        name:"Marie Anne Cantin",
+        profession: "Guide local"
+    }
 ];
 
 export default function Testimonials(): JSX.Element {
+
+    useEffect(() => {
+    
+        scrollReveal(
+            ".section_testimonials p.para",
+            ".section_testimonials"
+        );
+
+        scrollReveal(
+            ".section_testimonials .testimonial_info",
+            ".section_testimonials .testimonial_info"
+        );
+
+        scrollReveal(
+            ".section_testimonials .testimonial_swiper_nav",
+            ".section_testimonials .testimonial_swiper_nav"
+        );
+
+  }, []);
     const [currentTestimonialId, setCurrentTestimonialId] = useState<string>(testimonials[0].id);
 
     const handleSlideChange = (swiper: any) => {
@@ -52,7 +72,7 @@ export default function Testimonials(): JSX.Element {
     };
 
     return (
-        <section data-nav="gallery" className={`${styles.testimonials} small_container`}>
+        <section data-nav="gallery" className={`${styles.testimonials} section_testimonials small_container`}>
             <Swiper
                 modules={[Navigation, A11y]}
                 spaceBetween={30}
@@ -70,7 +90,7 @@ export default function Testimonials(): JSX.Element {
                             <p className={`${styles.testimonial_text} para`}>
                                 “ {testimonial.text} ”
                             </p>
-                            <div className={`${styles.testimonial_infos} para_S`}>
+                            <div className={`${styles.testimonial_infos} testimonial_info para_s`}>
                                 {testimonial.imageUrl && (
                                     <Image
                                         src={testimonial.imageUrl}
@@ -91,7 +111,7 @@ export default function Testimonials(): JSX.Element {
                         </div>
                     </SwiperSlide>
                 ))}
-                <div className={styles.testimonial_swiper_navigation}>
+                <div className={`${styles.testimonial_swiper_navigation} testimonial_swiper_nav`}>
                     <div className={`${styles.swiperButtonPrevCustom} swiper-button-prev-custom`}>
                         <Image src="/assets/icons/swiper-prev.svg" alt="Previous" width={24} height={24} />
                     </div>

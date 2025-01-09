@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import styles from './edito.module.css';
 import { slideDown, scrollReveal } from '@/app/animations/animationsgsap';
 
@@ -27,20 +27,14 @@ export default function Edito({ title, imageSrc, para, para_2, para_3, invert }:
 
     scrollReveal(
         ".section_edito h2",
-        ".section_edito",
-        "top bottom",
-        "bottom 20%",
-        false,
-        0,
+        ".section_edito"
     );
 
     const paraIds = ['para1', 'para2', 'para3'];
         paraIds.forEach((id) => {
             scrollReveal(
               `.section_edito #${id}`,
-              `.section_edito #${id}`,
-              "top bottom",
-              "bottom 20%"
+              `.section_edito #${id}`
             );
         });
   }, []);

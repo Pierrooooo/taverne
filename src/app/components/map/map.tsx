@@ -17,9 +17,7 @@ export default function Map(): JSX.Element {
         scrollReveal(
             ".section_map h2",
             ".section_map",
-            "top bottom",
-            "bottom 20%",
-            false
+            "top bottom"
         );
 
 
@@ -29,9 +27,7 @@ export default function Map(): JSX.Element {
         scrollReveal(
             `.section_map #${id}`,
             `.section_map #${id}`,
-            "top bottom",
-            "bottom 20%",
-            false
+            "top bottom"
         );
     });
     }, []);

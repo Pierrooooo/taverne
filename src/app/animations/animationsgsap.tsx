@@ -81,10 +81,11 @@ export const scaleUp = (
 export const scrollReveal = (
     target: gsap.TweenTarget,
     trigger: string,
-    start: string = "top 80%",
+    start: string = "top bottom",
     end: string = "bottom 20%",
     scrub: boolean = false,
-    delay: number = 0
+    delay: number = 0,
+    markers: boolean = false
 ) => {
     if (typeof window !== "undefined") {
         const ScrollTrigger = require("gsap/ScrollTrigger").ScrollTrigger;
@@ -104,6 +105,7 @@ export const scrollReveal = (
                     start,
                     end,
                     scrub,
+                    markers
                 },
             } 
         );
