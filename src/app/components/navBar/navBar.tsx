@@ -57,7 +57,7 @@ export default function NavBar() {
       </Link>
       <ul className={styles.links}>
         <li>
-          <Link href={'/gallery'}>Gallerie</Link>
+          <Link href={'/gallery'}>Galerie</Link>
         </li>
         <li>
           <Link href={'/menu'}>Menu</Link>
@@ -87,7 +87,7 @@ export default function NavBar() {
             <Link href={'/'} onClick={toggleMenu}>Accueil</Link>
           </li>
           <li>
-            <Link href={'/gallery'} onClick={toggleMenu}>Gallerie</Link>
+            <Link href={'/gallery'} onClick={toggleMenu}>Galerie</Link>
           </li>
           <li>
             <Link href={'/menu'} onClick={toggleMenu}>Menu</Link>

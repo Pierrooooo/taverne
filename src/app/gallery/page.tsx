@@ -54,7 +54,7 @@ export default function Gallery() {
 
   return (
     <main>
-      <Hero heroTitle="Gallerie" imageSrc="/assets/images/hero.jpeg" />
+      <Hero heroTitle="Galerie" imageSrc="/assets/images/hero.jpeg" />
 
       <section className={`${styles.galleryContainer} section_gallery`}>
         <div className={styles.tabContainer}>

@@ -40,7 +40,7 @@ export default function Footer(): JSX.Element {
                             <Link href="/menu">Menu</Link>
                         </li>
                         <li id="footer_nav_li3">
-                            <Link href="/gallery">Gallerie</Link>
+                            <Link href="/gallery">Galerie</Link>
                         </li>
                     </ul>
                 </div>

@@ -37,11 +37,10 @@ export default function VisualStory(): JSX.Element {
             );
         });
     }, []);
-    
 
     return (
         <section className={`${styles.visualstory} section_visualstory container`}>
-            <h2 className={`${styles.section_title} title_XL`}>Restaurant La Frette</h2>
+            <h2 className={`${styles.section_title} title_XL`}>Restaurant - La Frette</h2>
             <div className={styles.visual_story_grid}>
                 <div className={styles.image}>
                     <Image 
@@ -59,7 +58,7 @@ export default function VisualStory(): JSX.Element {
                         Chaque plat est préparé avec des produits de saison, garantissant fraîcheur et saveurs authentiques dans toutes vos assiettes.
                     </p>
                     <p id="para2" className={`${styles.texts_para} para_s`}>
-                        Notre engagement envers la qualité des produits reflète notre volonté de proposer une cuisine qui respecte le goût et l origine des aliments, pour une expérience culinaire incomparable.
+                        Notre engagement envers la qualité des produits reflète notre volonté de proposer une cuisine qui respecte le goût et l'origine des aliments, pour une expérience culinaire incomparable.
                     </p>
                 </div>
                 <div className={styles.image}>
@@ -85,7 +84,7 @@ export default function VisualStory(): JSX.Element {
                 </div>
 
                 <div className={styles.texts}>
-                    <p id="para5" className={`${styles.texts_para} para_s`}>Nous sommes heureux de vous accueillir depuis octobre 2024</p>
+                    <p id="para5" className={`${styles.texts_para} para_s`}>Nous sommes heureux de vous accueillir depuis octobre 2024.</p>
                     <p id="title3" className={`${styles.texts_title} title`}>La Frette</p>
                     <p id="para6" className={`${styles.texts_para} para_s`}>
                         Situé à La Frette, notre restaurant vous invite à un voyage culinaire dans un cadre chaleureux et authentique. 
