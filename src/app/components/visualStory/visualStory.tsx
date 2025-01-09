@@ -58,7 +58,7 @@ export default function VisualStory(): JSX.Element {
                         Chaque plat est préparé avec des produits de saison, garantissant fraîcheur et saveurs authentiques dans toutes vos assiettes.
                     </p>
                     <p id="para2" className={`${styles.texts_para} para_s`}>
-                        Notre engagement envers la qualité des produits reflète notre volonté de proposer une cuisine qui respecte le goût et l'origine des aliments, pour une expérience culinaire incomparable.
+                        Notre engagement envers la qualité des produits reflète notre volonté de proposer une cuisine qui respecte le goût et lorigine des aliments, pour une expérience culinaire incomparable.
                     </p>
                 </div>
                 <div className={styles.image}>
