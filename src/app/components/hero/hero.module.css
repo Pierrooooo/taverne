@@ -49,7 +49,7 @@
     /* transform: rotate(90deg); */
     opacity: 0;
     transform: translate3d(0, 20px, 0) rotate(90deg);
-    animation: scroll_container_appears .3s 1.3s forwards ease-out;
+    animation: scroll_container_appears .3s 1s forwards ease-out;
 }
 
 .scroll_text span {
