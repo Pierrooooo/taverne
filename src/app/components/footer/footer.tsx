@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from 'next/link';
 import styles from './footer.module.css';
-import CopyToClipboard from "@/app/utils/copyToClipboard";
+import CopyToClipboard from '@/app/utils/copyToClipboard';
+
 import { useEffect } from "react";
 import { scrollReveal, slideDown } from "@/app/animations/animationsgsap";
 

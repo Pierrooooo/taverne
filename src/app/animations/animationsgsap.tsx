@@ -1,75 +1,68 @@
 import { gsap } from "gsap";
 
+let ScrollTrigger;
 if (typeof window !== "undefined") {
-    gsap.registerPlugin();
+  ScrollTrigger = require("gsap/ScrollTrigger").ScrollTrigger;
+  gsap.registerPlugin(ScrollTrigger);
 }
 
 export const fadeIn = (
-    target: gsap.TweenTarget,
-    duration: number = 1,
-    delay: number = 0
+  target: HTMLElement | NodeList,
+  duration: number = 1,
+  delay: number = 0
 ) => {
-    gsap.fromTo(
-        target,
-        { opacity: 0 },
-        { opacity: 1, duration, delay, ease: "power2.out" }
-    );
+  gsap.fromTo(
+    target,
+    { opacity: 0 },
+    { opacity: 1, duration, delay, ease: "power2.out" }
+  );
 };
 
 export const slideDown = (
-    target: gsap.TweenTarget,
-    trigger: string,
-    start: string = "center bottom",
-    end: string = "top center",
-    distance: number = 200,
-    duration: number = 1,
-    delay: number = 0,
-    scrub: number = 1,
-    markers: boolean = false
-  ) => {
-    if (typeof window !== "undefined") {
-      const ScrollTrigger = require("gsap/ScrollTrigger").ScrollTrigger;
-      gsap.registerPlugin(ScrollTrigger);
-  
-      gsap.fromTo(
-        target,
-        { y: `-${distance}`},
-        {
-          y: 0,
-          duration,
-          delay,
-          scrollTrigger: {
-            trigger,
-            start,
-            end,
-            scrub,
-            markers
-          },
-        }
-      );
-    }
-  };
-  
-
-  export const slideInFromBottom = (
-    target: gsap.TweenTarget,
-    duration: number = 1,
-    delay: number = 0,
-    distance: string = "100px",
-    stagger: number = 0
+  target: gsap.TweenTarget,
+  trigger: string,
+  start: string = "center bottom",
+  end: string = "top center",
+  distance: number = 200,
+  duration: number = 1,
+  delay: number = 0,
+  scrub: number = 1,
+  markers: boolean = false
 ) => {
-    gsap.to(
-        target,
-        // { y: `${distance}` },
-        { y: "0", duration, delay, stagger, ease: "power2.out" }
+  if (typeof window !== "undefined") {
+    gsap.fromTo(
+      target,
+      { y: `-${distance}` },
+      {
+        y: 0,
+        duration,
+        delay,
+        scrollTrigger: {
+          trigger,
+          start,
+          end,
+          scrub,
+          markers
+        }
+      }
     );
+  }
 };
 
+export const slideInFromBottom = (
+  target: gsap.TweenTarget,
+  duration: number = 1,
+  delay: number = 0,
+  distance: string = "100px",
+  stagger: number = 0
+) => {
+  gsap.to(target, { y: "0", duration, delay, stagger, ease: "power2.out" });
+};
 
 export const scaleUp = (
-    target: gsap.TweenTarget,
-    duration: number = 1,
-    delay: number = 0
+  target: gsap.TweenTarget,
+  duration: number = 1,
+  delay: number = 0
 ) => {
   gsap.fromTo(
     target,
@@ -79,37 +72,34 @@ export const scaleUp = (
 };
 
 export const scrollReveal = (
-    target: gsap.TweenTarget,
-    trigger: string,
-    start: string = "top bottom",
-    end: string = "bottom 20%",
-    scrub: boolean = false,
-    delay: number = 0,
-    markers: boolean = false
+  target: gsap.TweenTarget,
+  trigger: string,
+  start: string = "top bottom",
+  end: string = "bottom 20%",
+  scrub: boolean = false,
+  delay: number = 0,
+  markers: boolean = false
 ) => {
-    if (typeof window !== "undefined") {
-        const ScrollTrigger = require("gsap/ScrollTrigger").ScrollTrigger;
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.fromTo(
-            target,
-            { opacity: 0, y: 50 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 1,
-                delay,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger,
-                    start,
-                    end,
-                    scrub,
-                    markers
-                },
-            } 
-        );
-    }
+  if (typeof window !== "undefined") {
+    gsap.fromTo(
+      target,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger,
+          start,
+          end,
+          scrub,
+          markers
+        }
+      }
+    );
+  }
 };
 
 export const killAllAnimations = () => {
@@ -117,11 +107,7 @@ export const killAllAnimations = () => {
 };
 
 export const createTimeline = () => {
-    const tl = gsap.timeline({ defaults: { 
-        ease: "power2.out",
-        duration: 1
-    } 
-});
+  const tl = gsap.timeline({ defaults: { ease: "power2.out", duration: 1 } });
   return tl;
 };
 
@@ -132,5 +118,5 @@ export default {
   scaleUp,
   scrollReveal,
   killAllAnimations,
-  createTimeline,
+  createTimeline
 };

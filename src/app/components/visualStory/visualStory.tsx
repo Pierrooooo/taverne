@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect } from 'react';
 import { slideDown, scrollReveal } from '@/app/animations/animationsgsap';
 
-export default function VisualStory(): JSX.Element {
+export default function VisualStory(): SX.Element {
 
     useEffect(() => {
         slideDown(
