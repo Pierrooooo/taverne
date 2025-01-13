@@ -10,11 +10,9 @@
   },
   "dependencies": {
     "@barba/core": "^2.10.0",
-    "@react-google-maps/api": "^2.20.3",
     "gsap": "^3.12.5",
     "leaflet": "^1.9.4",
-    "lenis": "^1.1.6",
-    "lightbox2": "^2.11.5",
+    "lenis": "^1.1.19",
     "next": "^15.1.4",
     "photoswipe": "^5.4.4",
     "react": "^19.0.0",

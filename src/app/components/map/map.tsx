@@ -2,27 +2,28 @@
 
 import { useEffect } from 'react';
 import styles from './map.module.css';
-import { scrollReveal } from '@/app/animations/animationsgsap';
+import { useScrollReveal } from '@/app/animations/animationsgsap';
 import MapLeaflet from '@/app/utils/MapLeaflet';
 
+// Custom Hook to manage the animations
+const useAnimations = () => {
+  // Call each hook individually
+  useScrollReveal(".section_map h2", ".section_map", "top bottom");
+
+  // Call `useScrollReveal` for each paraId individually
+  useScrollReveal(".section_map #para1", ".section_map #para1", "top bottom");
+  useScrollReveal(".section_map #para2", ".section_map #para2", "top bottom");
+  useScrollReveal(".section_map #para3", ".section_map #para3", "top bottom");
+  useScrollReveal(".section_map #para4", ".section_map #para4", "top bottom");
+  useScrollReveal(".section_map #para5", ".section_map #para5", "top bottom");
+  useScrollReveal(".section_map #para6", ".section_map #para6", "top bottom");
+  useScrollReveal(".section_map #para7", ".section_map #para7", "top bottom");
+  useScrollReveal(".section_map #para8", ".section_map #para8", "top bottom");
+};
 
 export default function Map(): JSX.Element {
-  useEffect(() => {
-    scrollReveal(
-      ".section_map h2",
-      ".section_map",
-      "top bottom"
-    );
-
-    const paraIds = ['para1', 'para2', 'para3', 'para4', 'para5', 'para6', 'para7', 'para8'];
-    paraIds.forEach((id) => {
-      scrollReveal(
-        `.section_map #${id}`,
-        `.section_map #${id}`,
-        "top bottom"
-      );
-    });
-  }, []);
+  // Call the custom hook at the top-level of the component
+  useAnimations();
 
   return (
     <section className={`${styles.section_map} section_map container`}>
