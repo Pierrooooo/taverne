@@ -2,7 +2,6 @@
 
 import Hero from './components/hero/hero';
 import Quote from './components/quote/quote';
-import GridLayout from './oui';
 import Testimonials from './components/testimonials/testimonials';
 import Map from './components/map/map';
 import VisualStory from './components/visualStory/visualStory';
