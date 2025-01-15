@@ -1,9 +1,7 @@
-'use client';
-
 import Image from 'next/image';
 import { useEffect } from 'react';
 import styles from './edito.module.css';
-import { slideDown, scrollReveal } from '@/app/animations/animationsgsap';
+import { useSlideDown, useScrollReveal } from '@/app/animations/animationsgsap';
 
 interface EditoProps {
     title: string;
@@ -14,30 +12,28 @@ interface EditoProps {
     invert: boolean;
 }
 
+// Custom Hook to manage the animations
+const useAnimations = () => {
+  // Call the animation functions here
+  useSlideDown(
+    ".section_edito .anim_img_bg",
+    ".section_edito .anim_img_bg",
+    "top bottom",
+    "bottom top",
+    100,
+  );
+
+  useScrollReveal(".section_edito h2", ".section_edito");
+
+  // Call the scroll reveal for each paragraph individually
+  useScrollReveal("#para1", "#para1");
+  useScrollReveal("#para2", "#para2");
+  useScrollReveal("#para3", "#para3");
+};
+
 export default function Edito({ title, imageSrc, para, para_2, para_3, invert }: EditoProps): JSX.Element {
-
-  useEffect(() => {
-    slideDown(
-      ".section_edito .anim_img_bg",
-      ".section_edito .anim_img_bg",
-      "top bottom",
-      "bottom top",
-      100,
-    );
-
-    scrollReveal(
-        ".section_edito h2",
-        ".section_edito"
-    );
-
-    const paraIds = ['para1', 'para2', 'para3'];
-        paraIds.forEach((id) => {
-            scrollReveal(
-              `.section_edito #${id}`,
-              `.section_edito #${id}`
-            );
-        });
-  }, []);
+  // Call the custom hook at the top-level of the component
+  useAnimations();
 
   return (
     <section className={`${styles.edito}${invert ? ` ${styles.invert}` : ''} section_edito container`}>

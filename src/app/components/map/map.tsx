@@ -2,12 +2,16 @@
 
 import { useEffect } from 'react';
 import styles from './map.module.css';
+
 import { scrollReveal } from '@/app/animations/animationsgsap';
 import dynamic from 'next/dynamic';
 
 const MapComponent = dynamic(() => import('./mapComponent'), { ssr: false });
 
+
 export default function Map(): JSX.Element {
+  // Call the custom hook at the top-level of the component
+  useAnimations();
 
     useEffect(() => {
         scrollReveal(
