@@ -9,10 +9,25 @@ import CopyToClipboard from "@/app/utils/copyToClipboard";
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTestimonialsActive, setIsTestimonialsActive] = useState(false);
+  const [scrollPercentage, setScrollPercentage] = useState(0);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const documentHeight = document.body.scrollHeight - window.innerHeight;
+      const scrolled = (scrollTop / documentHeight) * 100;
+      setScrollPercentage(scrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const testimonialsSection = document.querySelector('.testimonials');
@@ -44,6 +59,9 @@ export default function NavBar() {
       className={`${styles.navbar} ${
         isTestimonialsActive ? styles.active : ""
       }`}
+      style={{
+        '--scroll-percentage': `${scrollPercentage}%`,
+      } as React.CSSProperties}
     >
       <Link href={'/'}>
         <Image 
