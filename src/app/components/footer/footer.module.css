@@ -22,7 +22,7 @@
 
 .footer_info ul li {
     font-size: 24px;
-    margin-top: 12px;
+    margin-top: 14px;
 }
 
 .footer_image {
@@ -80,6 +80,10 @@
 
     .footer_info ul {
         margin-top: 24px;
+    }
+
+    .footer_info ul li {
+        margin-top: 20px;
     }
 
     .footer_image img {

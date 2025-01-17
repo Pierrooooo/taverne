@@ -36,12 +36,12 @@ const testimonials: Testimonial[] = [
         profession: "Guide local",
         imageUrl: "/assets/images/paul.png"
     },
-    {
-        id: '4',
-        text: "Acceuil sympa, cusine délicieuse, rapport Qualité/prix tt a fait correct. La fine gueule que je suis vous recommande ce lieu",
-        name:"Marie Anne Cantin",
-        profession: "Guide local"
-    }
+    // {
+    //     id: '4',
+    //     text: "Acceuil sympa, cusine délicieuse, rapport Qualité/prix tt a fait correct. La fine gueule que je suis vous recommande ce lieu",
+    //     name:"Marie Anne Cantin",
+    //     profession: "Guide local"
+    // }
 ];
 
 export default function Testimonials(): JSX.Element {
