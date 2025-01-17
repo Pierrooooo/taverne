@@ -19,7 +19,7 @@ export default function NavBar() {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const documentHeight = document.body.scrollHeight - window.innerHeight;
-      const scrolled = (scrollTop / documentHeight) * 100;
+      const scrolled = Math.round((scrollTop / documentHeight) * 10000) / 100;
       setScrollPercentage(scrolled);
     };
 
