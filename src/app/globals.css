@@ -91,7 +91,7 @@ strong:not(.bold) {
   width: fit-content;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .underline {
     text-decoration: underline;
   }
