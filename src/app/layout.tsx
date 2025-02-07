@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <Head>
-      <link rel="icon" href="./favicon.ico" type="image/x-icon" sizes="48x48"/>
+        <link rel="icon" href="./favicon.ico" type="image/x-icon" sizes="48x48"/>
       </Head>
       <body className={textFont.className}>
         <SmoothScrolling>
