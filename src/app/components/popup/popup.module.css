@@ -1,0 +1,51 @@
+.popupOverlay {
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.popupOverlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup {
+    position: relative;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 420px;
+    background: var(--beige);
+}
+
+.popup h2 {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 36px;
+}
+
+.popup div p {
+    font-size: 20px;
+}
+
+.closeButton {
+    position: absolute;
+    border: none;
+    padding: 20px;
+    top: 0;
+    right: 0;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+  

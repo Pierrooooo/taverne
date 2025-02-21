@@ -8,6 +8,7 @@ import { textFont } from "./utils/fonts";
 import Footer from "./components/footer/footer";
 import NavBar from "./components/navBar/navBar";
 import Head from "next/head";
+import Popup from "./components/popup/popup";
 
 const SmoothScrolling = dynamic(() => import("./SmoothScrolling"));
 
@@ -15,6 +16,11 @@ export const metadata: Metadata = {
   title: "La P'tite Tavern",
   description: "Restaurant La P'tite Taverne situé à la Frette, cuisine française, bistronomique.",
 };
+
+const popupTexts = [
+  "Pour cause de problème personnels le restaurant sera fermé pour une durée indeterminée.",
+  "Merci pour votre compréhension et nous l'espérons à bientôt (;"
+]
 
 export default function RootLayout({
   children,
@@ -31,6 +37,7 @@ export default function RootLayout({
           <NavBar />
           {children}
           <Footer />
+          <Popup title="Actuellement fermée" texts={popupTexts} />
         </SmoothScrolling>
       </body>
     </html>
